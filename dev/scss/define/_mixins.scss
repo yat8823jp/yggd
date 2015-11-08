@@ -1,0 +1,70 @@
+@mixin beforeafter {
+	content: "";
+	display: block;
+}
+
+@mixin elmhidden {
+	text-indent: -10000px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+@mixin clearfix {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+@mixin dropshadow {
+	box-shadow: 0 3px 3px -3px rgba(0,0,0, 0.5);
+}
+
+@mixin mainbg {
+	background: #fff;
+	background-color: rgba(255,255,255,0.50);
+}
+
+@mixin opacity-bk( $opacity ) {
+	background-color: rgba(0,0,0, $opacity);
+}
+
+@mixin opacity-wh( $opacity ) {
+	background-color: rgba(255,255,255, $opacity);
+}
+
+@mixin reset {
+	margin: 0;
+	padding: 0;
+	h2 {
+		margin: 0;
+		padding: 0;
+		background: none;
+		box-shadow: none;
+	}
+
+	h3, h4, h5, h6, p, ul, ol, dl, dt, dd, img {
+		margin: 0;
+		padding: 0;
+		font-weight: normal;
+	}
+	ul, dl, li, dt, dd {
+		list-style-type: none;
+	}
+	table {
+		width: auto;
+		margin: 0;
+		background: none;
+		box-sizing: border-box;
+		box-shadow: none;
+		tbody {
+			tr {
+				th, td {
+					margin: 0;
+					padding: 0;
+					border: none;
+					background: none;
+				}
+			}//tr
+		}//tbody
+	}//table
+}

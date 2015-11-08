@@ -1,0 +1,71 @@
+$baseSize : 62.5%;
+$hcolor: #595959;
+$textColor: #595959;
+
+$pcMainWid: 1140px;
+$tbMainWid: 768px;
+$smMainWid: 100%;
+
+$pcContentWid: 900px;
+$pdContentWid: 900px;
+$tbContentWid: 100%;
+$smContentWid: 100%;
+
+$pcSideWid: 220px;
+$pdSideWid: 900px;
+$tbSideWid: 100%;
+$smSideWid: 100%;
+
+$pcBreak: 'screen and (max-width: 1374px)';
+$tbBreak: 'screen and (max-width: 916px)';
+$smBreak: 'screen and (max-width: 640px)';
+
+/*
+@media #{ $pcBreak }{
+	transition: $transNormal;
+}//@media #{ $pcBreak }
+@media #{ $tbBreak }{
+	transition: $transNormal;
+}//@media #{ $pcBreak }
+@media #{ $smBreak }{
+	transition: $transNormal;
+}//@media #{ $pcBreak }
+*/
+
+$transNormal: 0.4s;
+
+@keyframes fade-in {
+	0% {
+		display: none;
+		opacity: 0;
+	}
+	1% {
+		display: block;
+		opacity: 0;
+	}
+	100% {
+		display: block;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out {
+	100% {
+		display: block;
+		opacity: 1;
+	}
+	1% {
+		display: block;
+		opacity: 0;
+	}
+	0% {
+		display: none;
+		opacity: 0;
+	}
+}
+
+.clearfix {
+	overflow: hidden;
+	zoom: 1;
+	clear: both;
+}

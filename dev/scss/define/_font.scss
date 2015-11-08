@@ -1,0 +1,17 @@
+html {
+	font-size: $baseSize;
+}
+
+body {
+	font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', "ＭＳ Ｐ明朝","MS PMincho", 'メイリオ', Meiryo, sans-serif;
+	color: $textColor;
+}
+
+$hwebfont: 'Poiret One', cursive;
+// .webfont {
+// 	font-family: 'Nova Round', cursive;
+// }
+
+.required {
+	color: #f00;
+}

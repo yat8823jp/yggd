@@ -1,0 +1,104 @@
+.mod-content-share {
+	@include dropshadow;
+	@include reset;
+	width: 100%;
+	text-align: center;
+	padding: 15px 0;
+	background: url(../img/content_share_bg.jpg);
+	position: relative;
+	z-index: 10;
+	ul {
+		margin: auto;
+		li {
+			margin-right: 10px;
+			display: inline;
+			font-size: 1.4rem;
+		}
+	}
+
+	@media #{ $pcBreak }{
+		transition: $transNormal;
+	}//@media #{ $pcBreak }
+	@media #{ $tbBreak }{
+		width: $tbContentWid;
+		transition: $transNormal;
+	}//@media #{ $pcBreak }
+	@media #{ $smBreak }{
+		width: $smContentWid;
+		transition: $transNormal;
+	}//@media #{ $pcBreak
+}
+
+.metasns {
+	width: 550px;
+	padding: 0;
+
+	@media #{ $pcBreak }{
+	}//@media #{ $pcBreak }
+	@media #{ $tbBreak }{
+		max-width: 550px;
+		width: auto;
+		transition: $transNormal;
+	}//@media #{ $pcBreak }
+	@media #{ $smBreak }{
+		transition: $transNormal;
+	}//@media #{ $pcBreak
+	li {
+		margin: 7px 3px 0 3px;
+		display: inline;
+	}
+
+	.hateb{
+		width: 50px;
+	}
+	.twSCount{
+		width: 26px;
+		height: 20px;
+		padding: 5px auto auto 7px;
+		text-decoration: none;
+		font-size: 1.0rem;
+		background:url(img/share/meta_tw_01.png) no-repeat;
+
+	}
+
+	.twtterb{
+		display: block;
+		float: left;
+
+		a.twbt{
+			width: 76px;
+			height: 20px;
+			background: url(img/share/meta_tw_01.png) no-repeat;
+			display: block;
+			float: left;
+		}
+
+		a.attr{
+			height: 20px;
+			margin: 0;
+			display: block;
+			float: left;
+			background:url(img/share/meta_tw_02.png) repeat-x;
+
+			span{
+				margin: 3px auto auto 2px;
+				height: 20px;
+				font-size: 1.2rem;
+				border: none;
+				display: block;
+				float: left;
+
+			}
+
+			.btend{
+				width: 10px;
+				height: 20px;
+				float: left;
+			}
+		}
+
+		.tweet-medium{ border: none; }
+	}//twtterb
+	.googleplusb{ width: 60px; }
+	.likeb{ width: 110px; }
+}//metasns

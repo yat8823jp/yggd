@@ -1,0 +1,13 @@
+.mod-container {
+	width: $pcContentWid;
+	margin: auto;
+	@media #{ $pcBreak }{
+		width: $pcContentWid;
+	}//@media #{ $pcBreak }
+	@media #{ $tbBreak }{
+		width: $tbContentWid;
+	}//@media #{ $pcBreak }
+	@media #{ $smBreak }{
+		width: $smContentWid;
+	}//@media #{ $pcBreak }
+}
