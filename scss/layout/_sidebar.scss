@@ -1,0 +1,17 @@
+.lout-sidebar {
+	width: $pcSideWid;
+	float: right;
+
+	@media #{ $pcBreak }{
+		width: $pdSideWid;
+		margin: auto;
+		float: none;
+		clear: both;
+	}//@media #{ $pcBreak }
+	@media #{ $tbBreak }{
+		width: $tbSideWid;
+	}//@media #{ $pcBreak }
+	@media #{ $smBreak }{
+		width: $smSideWid;
+	}//@media #{ $pcBreak }
+}//.lout-sidebar

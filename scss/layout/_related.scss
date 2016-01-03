@@ -1,0 +1,23 @@
+.yarpp-related {
+	margin: 30px 0 0 0 !important;
+}
+.lout-related {
+	top: 140px;
+	position: relative;
+	&::before {
+		width: 81px;
+		height: 183px;
+		// left: 309px;
+		left: 50%;
+		text-align: center;
+		margin: -160px 0 40px -40px;
+		background: url(../img/cage.png) no-repeat top;
+		@include beforeafter;
+		position: absolute;
+		z-index: -1;
+	}
+	&::after {
+		height: 50px;
+		@include beforeafter;
+	}
+}

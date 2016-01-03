@@ -1,0 +1,33 @@
+.alignright {
+	display: block;
+	float: right;
+	margin: {
+		left: 10px;
+	}
+}
+
+.alignleft {
+	display: block;
+	float: left;
+	margin: {
+		right: 10px;
+	}
+}
+
+.aligncenter {
+	margin: 0 auto;
+	display: block;
+}
+
+//
+.post-categories {
+	display: inline;
+	li {
+		padding-right: 5px;
+	}
+}
+
+.wp-post-image {
+	max-width: 100%;
+	margin-bottom: 40px;
+}

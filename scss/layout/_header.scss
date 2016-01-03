@@ -1,0 +1,127 @@
+.lout-header {
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	.mod-container {
+		margin: 0;
+		padding: 30px 0;
+		background: #fff;
+		background-color: rgba(255,255,255,0.50);
+		@media #{ $pcBreak }{
+			width: $pcContentWid;
+			transition: $transNormal;
+			margin: auto;
+		}//@media #{ $pcBreak }
+		@media #{ $tbBreak }{
+			width: $tbContentWid;
+			transition: $transNormal;
+			margin: 0;
+		}//@media #{ $pcBreak }
+		@media #{ $smBreak }{
+			width: $smMainWid;
+			transition: $transNormal;
+			margin: 0;
+		}//@media #{ $pcBreak }
+	}
+	&::before,
+	&::after {
+		width: 541px;
+		height: 299px;
+		position: absolute;
+		img { overflow: hidden; }
+		@include beforeafter;
+	}
+	&::before {
+		top: 0;
+		left: 0;
+		background: url(../img/common/head_deco_left.png) no-repeat;
+		overflow: hidden;
+		transition: $transNormal;
+		@media #{ $pcBreak }{
+			transition: $transNormal;
+			left: -300px;
+		}//@media #{ $pcBreak }
+		@media #{ $tbBreak }{
+			transition: $transNormal;
+			left: -400px;
+		}//@media #{ $pcBreak }
+		@media #{ $smBreak }{
+			transition: $transNormal;
+			left: -480px;
+		}//@media #{ $pcBreak }
+	}//&::before
+	&::after {
+		top: 0;
+		right: 0;
+		background: url(../img/common/head_deco_right.png) no-repeat;
+		overflow: hidden;
+		transition: $transNormal;
+		@media #{ $pcBreak }{
+			transition: $transNormal;
+			right: -300px;
+		}//@media #{ $pcBreak }
+		@media #{ $tbBreak }{
+			transition: $transNormal;
+			right: -400px;
+		}//@media #{ $pcBreak }
+		@media #{ $smBreak }{
+			transition: $transNormal;
+			right: -480px;
+		}//@media #{ $pcBreak }
+	}//&::after
+	.mod-sitelogo {
+		margin: 40px auto 30px;
+		a {
+			width: 220px;
+			height: 279px;
+			margin: auto;
+			display: block;
+			background: url(../img/common/head_logo_over.png) no-repeat;
+			img {
+				margin: -2px auto auto auto;
+				opacity: 1;
+				transition: all 1s;
+			}
+			&:hover {
+				img{
+					opacity: 0;
+					transition: all 1s;
+					// display: none;
+				}
+			}
+		}//a
+	}//..mod-sitelogo
+	.mod-site-search {
+		font-size: 2.6rem;
+		font-family: $hwebfont
+	}//.mod-site-search
+	.mod-headside-text {
+		top: 210px;
+		left: 10%;
+		font-size: 1.6rem;
+		position: absolute;
+		@media #{ $pcBreak }{
+			width: 270px;
+			height: 55px;
+			background: url(../img/common/head_side_text_pc.png) no-repeat;
+			left: 10%;
+			img { display: none; }
+		}//@media #{ $pcBreak }
+		@media #{ $tbBreak }{
+			width: 190px;
+			height: 121px;
+			background: url(../img/common/head_side_text_tb.png) no-repeat;
+			left: 5%;
+			img { display: none; }
+		}//@media #{ $pcBreak }
+		@media #{ $smBreak }{
+			width: 67px;
+			height: 55px;
+			top: 94px;
+			left: 7%;
+			background: url(../img/common/head_side_text_sm.png) no-repeat;
+			img { display: none; }
+		}//@media #{ $pcBreak }
+	}
+}//.lout-header
