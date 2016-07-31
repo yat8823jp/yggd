@@ -200,8 +200,7 @@ function my_list_categories( $output, $args ) {
 add_filter( 'jpeg_quality',function( $arg ) { return 100; } );
 
 //抜粋記事の取得
-function get_the_custom_excerpt( $content, $length ) {
-	if (! $length ) { $length = 70; }
+function get_the_custom_excerpt( $content, $length = 70 ) {
 	$del = array( "&nbsp;", "\r\n" );
 	$content =  preg_replace( '/<!--more-->.+/is', "", $content ); //moreタグ以降削除
 	$content =  strip_shortcodes( $content );//ショートコード削除
