@@ -1,11 +1,11 @@
 .mod-main-content-sub {
-	margin-top: -50px;
+	margin-top: -90px;
 	background: url(../img/content_sub_bg.jpg);
 	position: relative;
 
 	@media #{ $pcBreak }{
 		width: $pcContentWid;
-		margin: -50px auto auto auto;
+		margin: -90px auto auto auto;
 		float: none;
 		transition: $transNormal;
 	}//@media #{ $pcBreak }

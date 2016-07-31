@@ -7,7 +7,7 @@ define( 'COMMON_PFIX', get_template_directory_uri() );
 
 //テーマ用スタイルシートとJavaScriptの読み込み
 function msSytlesScripts(){
-	wp_deregister_script('jquery');//デフォルトのjQueryを読み込まない
+	// wp_deregister_script('jquery');//デフォルトのjQueryを読み込まない
 	wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', array(), null, 'all' );
 }
 add_action( 'wp_enqueue_scripts', 'msSytlesScripts' );

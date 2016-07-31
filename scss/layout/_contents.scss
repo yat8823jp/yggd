@@ -54,6 +54,10 @@
 			max-width: 900px;
 		}
 
+		dt {
+			font-weight: bold;
+		}
+
 		img {
 			// max-width: 860px;
 			@media #{ $pcBreak }{

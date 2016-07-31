@@ -16,13 +16,18 @@
 <?php } ?>
 <?php get_template_part( 'parts/loop' ); ?>
 <?php if(! is_singular() ) { ?>
-	<nav class="lout-pagination">
 		<?php
+			global $wp_query;
+			$max_num_pages = $wp_query->max_num_pages; //ページ総数
+
 			if( function_exists ( 'wp_pagenavi' ) ) {
-				wp_pagenavi();
+				if( $max_num_pages > 1 ) {
+					echo '<nav class="lout-pagination">';
+					wp_pagenavi();
+					echo '</nav>';
+				}
 			}
 		?>
-	</nav>
 <?php } ?>
 </article><!--/.lout-main-contents-->
 
