@@ -17,7 +17,7 @@ add_theme_support( 'title-tag' );
 //feed有効
 add_theme_support( 'automatic-feed-links' );
 //アイキャッチ有効
-add_theme_support('post-thumbnails');
+add_theme_support( 'post-thumbnails' );
 
 //アイキャッチのサイズ削除
 add_filter( 'post_thumbnail_html', 'custom_attribute' );
@@ -45,7 +45,7 @@ function theme_slug_widgets_init() {
 		$eyecatch = the_post_thumbnail();
 
 		register_sidebar( array(
-			'name' => '広告用',
+			'name' => 'サイド広告用',
 			'id' => 'sidebar_ad',
 			'before_widget' => $before,
 			'after_widget' => $after,
@@ -82,32 +82,6 @@ function theme_slug_widgets_init() {
 		));
 	}//if
 }//theme_slug_widgets_init
-
-//カスタム投稿
-add_action( 'init', 'theme_post_type_init' );
-function theme_post_type_init(){
-	register_post_type( 'advertisement',
-		array(
-			'labels' => array(
-				'name' => __( '広告' ), // フロントで表示する投稿タイプ名
-				'singular_name' => __( '個別広告' ),
-				),
-			'public' => true,
-			'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields' )
-		)
-	);
-	register_taxonomy(
-	'customer', // 内部的な分類名
-	'post',  // 適用する投稿タイプ
-		array(
-			'label' => '広告', // 表向きの分類名
-			'hierarchical' => false, // 階層構造
-			// 'query_var' => true,
-			'public' => false,
-			'rewrite' => false
-		)
-	);
-}//theme_post_type_init()
 
 //カスタムフィールド
 function ad_meta_box() {
@@ -208,4 +182,8 @@ function get_the_custom_excerpt( $content, $length = 70 ) {
 	$content =  str_replace( $del, "", $content );//特殊文字の削除
 	$content =  mb_substr( $content, 0, $length );//文字列を指定した長さで切り取る
 	return $content;
+}
+
+function content_end_ad( $addata ) {
+
 }

@@ -43,7 +43,7 @@
 			overflow: hidden;
 		}
 		.lout-footer-tagcloud-h {
-			padding: 25px 0 35px 125px;
+			padding: 25px 0 35px 0;
 			font-size: 2.0rem;
 			font-family: $hwebfont;
 			@media #{ $smBreak }{
@@ -148,7 +148,7 @@
 		}//@media #{ $pcBreak }
 		.lout-footer-auth-h {
 			margin-bottom: 10px;
-			padding: 0 0 0 45px;
+			padding: 0;
 			font-size: 2.4rem;
 			color: #fff;
 			font-family: $hwebfont;

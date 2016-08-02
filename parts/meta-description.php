@@ -1,12 +1,13 @@
 <?php
 global $page, $paged;
 $obj = get_queried_object();
+
 // var_dump( $obj );
 //title
 	if ( is_home() ) {
-		$title = get_bloginfo( 'name' );
+		$title = home_url( 'name' );
 	} else {
-		$title = wp_title( '', false, 'right' ) . '｜' . get_bloginfo( 'name' );
+		$title = wp_title( '', false, 'right' ) . '｜' . home_url( 'name' );
 	}
 	if ( $paged >= 2 || $page >= 2 ) {
 		if( is_home ) {
@@ -23,7 +24,7 @@ $obj = get_queried_object();
 	}
 //discription
 	if ( is_home() ) {
-		$description = get_bloginfo( 'description' );
+		$description = home_url( 'description' );
 	} else if ( is_category() ){
 		$description = str_replace( "\n", "", category_description() );
 	}
@@ -37,7 +38,7 @@ $obj = get_queried_object();
 	$description = str_replace( "</p>", "", $description );
 //url
 	if ( is_home() ) {
-		$canonical_url = get_bloginfo( 'url' ) . "/";
+		$canonical_url = home_url() . "/";
 	} else if ( is_category() ) {
 		$canonical_url = get_category_link( get_query_var( 'cat' ) );
 	} else if ( is_page() || is_single() ) {
@@ -50,11 +51,11 @@ $obj = get_queried_object();
 	$str = $post -> post_content;
 	$searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';//投稿にイメージがあるか調べる
 	if ( has_post_thumbnail() && ! is_archive() && ! is_front_page() && ! is_home() ){//投稿にサムネイルがある場合の処理
-		$image_id = get_post_thumbnail_id( $org -> ID );
+		$image_id = get_post_thumbnail_id( $post -> ID );
 		$image = wp_get_attachment_image_src( $image_id, 'full' );
-		$ogimage=$image[0];
+		$ogimage = $image[0];
 	}else if ( preg_match( $searchPattern, $str, $imgurl ) && is_single() ) {//投稿にサムネイルは無いが画像がある場合の処理
-		$ogimage=$imgurl[2];
+		$ogimage = $imgurl[2];
 	} else {//投稿にサムネイルも画像も無い場合、もしくはアーカイブページの処理
 		$ogimage = COMMON_PFIX . "/img/ogp_image.jpg";
 	}
