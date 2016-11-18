@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://www.facebook.com/2008/fbml">
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<html lang="ja" prefix="og: //ogp.me/ns# fb: //www.facebook.com/2008/fbml">
+<head prefix="og: //ogp.me/ns# fb: //ogp.me/ns/fb# article: //ogp.me/ns/article#">
 <meta charset="UTF-8">
 <meta name="description" content="<?php bloginfo( 'description' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no">
 <?php get_template_part('parts/meta', 'description'); ?>
-<link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="<?php echo COMMON_PFIX; ?>/css/reset-css/reset.css">
 <link rel="stylesheet" href="<?php echo COMMON_PFIX; ?>/css/common.css">
 <link rel="icon" href="<?php echo COMMON_PFIX; ?>/favicon.ico" type="image/gif">
@@ -16,6 +16,7 @@
 <?php wp_head(); ?>
 </head>
 <body>
+<?php get_template_part( 'parts/adsense' ); ?>
 <?php get_template_part( 'parts/analysis', 'google' ); ?>
 <header class="lout-header">
 	<div class="lout-main">
@@ -23,8 +24,8 @@
 			<nav class="lout-main-navi">
 				<ul>
 					<li class="mod-main-navi-1"><a href="/?page_id=5">About</a></li>
-					<li class="mod-main-navi-2"><a href="https://twitter.com/yat8823jp">Twitter</a></li>
-					<li class="mod-main-navi-3"><a href="https://www.facebook.com/yatblog/">Facebook</a></li>
+					<li class="mod-main-navi-2"><a href="//twitter.com/yat8823jp">Twitter</a></li>
+					<li class="mod-main-navi-3"><a href="//www.facebook.com/yatblog/">Facebook</a></li>
 					<li class="mod-main-navi-4"><a href="<?php bloginfo('rdf_url'); ?>">Rss</a></li>
 				</ul>
 			</nav>

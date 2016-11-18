@@ -76,4 +76,4 @@ $obj = get_queried_object();
 <meta name="twitter:title" content="<?php echo $title; ?>" />
 <meta name="twitter:description" content="<?php echo $description; ?>" />
 <meta name="twitter:image" content="<?php echo $ogimage; ?>" />
-<meta name="twitter:url" content="https://twitter.com/yat8823jp" />
+<meta name="twitter:url" content="//twitter.com/yat8823jp" />

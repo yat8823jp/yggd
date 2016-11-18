@@ -280,7 +280,7 @@
 	}
 
 	@media #{ $pcBreak }{
-		margin: auto;
+		margin: auto auto 40px;
 		float: none;
 		transition: $transNormal;
 	}//@media #{ $pcBreak }

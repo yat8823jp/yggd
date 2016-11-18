@@ -15,20 +15,47 @@
 		margin-left: 50px !important;
 		transition: $transNormal;
 	}//@media #{ $pcBreak
-	li {
-		margin: 0 3px 0 3px;
-		padding: 5px 0;
-		display: inline-block !important;
-		overflow: hidden !important;
+	&-item {
+		a {
+			width: 92px;
+			height: 35px;
+			padding: 11px;
+			background: url(../img/share/metasns_btbg.png) no-repeat;
+			text-decoration: none;
+			display: inline-block;
+			box-sizing: border-box;
+		}
+		&-set {
+			dt {
+				display: inline;
+				img {
+					border: none;
+					display: inline;
+				}
+			}
+			dd {
+				width: 66%;
+				text-align: right;
+				display: inline-block;
+				vertical-align: top;
+			}
+		}//&-set
+	}//&-item
+	&-hateb {
+		width: 15px;
+		height: 15px;
 	}
+	// li {
+	// 	margin: 0 3px 0 3px;
+	// 	padding: 5px 0;
+	// 	display: inline-block !important;
+	// 	overflow: hidden !important;
+	// }
 	iframe {
 		margin: 0 !important;
 		html {
 			width: 60px !important;
 		}
-	}
-
-	.hateb{
 	}
 
 	.pluginSkinLight {
@@ -51,8 +78,8 @@
 	@include dropshadow;
 	@include reset;
 	width: 100%;
-	height: 40px;
-	line-height: 45px;
+	height: 55px;
+	line-height: 48px;
 	// padding-top: 14px;
 	font-size: 2.0rem;
 	text-align: center;

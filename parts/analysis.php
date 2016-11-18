@@ -1,5 +1,5 @@
 <!--+1bt-->
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js">
+<script type="text/javascript" src="//apis.google.com/js/plusone.js">
   {lang: 'ja'}
 </script>
 

@@ -233,6 +233,7 @@ iframe {
 a {
 	// display: inline-block;
 }
+a[href^="http"],
 a[href^="http"] {
 	background: url(../img/exlink.png) no-repeat right center;
 	padding-right: 14px;
@@ -240,7 +241,11 @@ a[href^="http"] {
 }
 a[href^="http://wp.yat-net.com/"],
 a[href^="http://yatblog.dev/"]
-a[href^="http://yatblogimg.s3-website-ap-northeast-1.amazonaws.com/"] {
+a[href^="http://yatblogimg.s3-website-ap-northeast-1.amazonaws.com/"],
+a[href^="https://wp.yat-net.com/"],
+a[href^="https://yatblog.dev/"]
+a[href^="https://yatblogimg.s3-website-ap-northeast-1.amazonaws.com/"]
+ {
 	background: none;
 	padding-right: 0px;
 	margin-right: 0px;
