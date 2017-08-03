@@ -1,8 +1,16 @@
 <div class="mod-title-line">
 	<div class="mod-container">
 		<time class="mod-title-line-time" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y年 m月 d日'); ?></time>
-		<h2 class="mod-title-line-title"><?php the_title(); ?></h2>
-<?php if(! is_page() ){ ?>
+		<h2 class="mod-title-line-title">
+			<?php if( is_404() ) { ?>
+				404 Page not found.
+			<?php
+				} else {
+					the_title();
+				}
+			?>
+		</h2>
+<?php if(! is_page() && ! is_404() && ! is_search() ) { ?>
 		<ul class="mod-title-line-meta">
 			<li>
 				<dl>

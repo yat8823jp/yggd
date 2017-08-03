@@ -30,9 +30,19 @@ h2 {
 	background: url(../img/postdata_h2_bg.jpg);
 	@include dropshadow;
 }
-
-h3, h4, h5, h6 {
+h3 {
 	font-size: 2.0rem;
+	line-height: 1.8;
+	margin: 80px 40px 30px;
+	padding-bottom: 10px;
+	font-weight: bold;
+	text-align: center;
+	color: #e11f6a;
+	border-bottom: 1px solid #e11f6a;
+}
+
+h4, h5, h6 {
+	font-size: 1.8rem;
 	line-height: 1.8;
 	margin: 80px 40px 30px;
 	font-weight: bold;
@@ -77,6 +87,9 @@ blockquote{
 		content: '”';
 		right: 10px;
 		bottom: -30px;
+	}
+	p {
+		word-wrap: break-word;
 	}
 }//blockquote
 

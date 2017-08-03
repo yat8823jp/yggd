@@ -67,13 +67,14 @@ $obj = get_queried_object();
 <meta property="og:title" content="<?php echo $title; ?>">
 <meta property="og:url" content="<?php echo $canonical_url; ?>">
 <meta property="og:description" content="<?php echo $description; ?>">
+<meta property="og:image" content="<?php echo $ogimage; ?>">
 <!-- facebook ogp -->
 <meta property="fb:admins" content="yat8823jp">
 <meta property="fb:app_id" content="215473061825970">
 <!-- twitter card ogp -->
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="blog" />
-<meta name="twitter:title" content="<?php echo $title; ?>" />
-<meta name="twitter:description" content="<?php echo $description; ?>" />
-<meta name="twitter:image" content="<?php echo $ogimage; ?>" />
-<meta name="twitter:url" content="//twitter.com/yat8823jp" />
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="blog">
+<meta name="twitter:title" content="<?php echo $title; ?>">
+<meta name="twitter:description" content="<?php echo $description; ?>">
+<meta name="twitter:image" content="<?php echo $ogimage; ?>">
+<meta name="twitter:url" content="//twitter.com/yat8823jp">

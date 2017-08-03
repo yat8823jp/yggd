@@ -1,8 +1,6 @@
 .metasns {
-	// width: 700px;
 	display: inline-block;
-	// text-align: center;
-	// float: right;
+	margin: 5px auto 6px 0;
 	@media #{ $pcBreak }{
 	}//@media #{ $pcBreak }
 	@media #{ $tbBreak }{
@@ -12,20 +10,22 @@
 	}//@media #{ $pcBreak }
 	@media #{ $smBreak }{
 		// width: 300px;
-		margin-left: 50px !important;
+		// margin-left: 50px !important;
 		transition: $transNormal;
 	}//@media #{ $pcBreak
 	&-item {
 		a {
-			width: 92px;
+			width: 75px;
 			height: 35px;
-			padding: 11px;
+			margin-top: 11px;
+			padding: 8px 6px 11px 8px;
 			background: url(../img/share/metasns_btbg.png) no-repeat;
 			text-decoration: none;
 			display: inline-block;
 			box-sizing: border-box;
 		}
 		&-set {
+			vertical-align: middle;
 			dt {
 				display: inline;
 				img {
@@ -34,7 +34,7 @@
 				}
 			}
 			dd {
-				width: 66%;
+				width: 56%;
 				text-align: right;
 				display: inline-block;
 				vertical-align: top;
@@ -44,6 +44,20 @@
 	&-hateb {
 		width: 15px;
 		height: 15px;
+		@media #{ $smBreak }{
+		}
+	}
+	&-tw {
+		width: 18px;
+		height: 14px;
+		@media #{ $smBreak }{
+		}
+	}
+	&-fb {
+		width: 14px;
+		height: 14px;
+		@media #{ $smBreak }{
+		}
 	}
 	// li {
 	// 	margin: 0 3px 0 3px;
@@ -88,7 +102,7 @@
 	z-index: 10;
 	ul {
 		margin: auto;
-		vertical-align: middle;
+		// vertical-align: middle;
 		li {
 			margin-right: 10px;
 			display: inline;
@@ -105,24 +119,25 @@
 	}//@media #{ $pcBreak }
 	@media #{ $smBreak }{
 		width: $smContentWid;
+		min-height: 55px;
 		height: auto;
 		line-height: auto;
 		transition: $transNormal;
 		ul {
-			padding-top: 10px;
+			// padding-top: 10px;
 		}
 	}//@media #{ $pcBreak
 }//.mod-content-share
 
 .mod-content-share-end {
-	margin-left: 160px;
-	text-align: left;
+	// margin-left: 160px;
+	// text-align: left;
 	@media #{ $pcBreak }{
 	}//@media #{ $pcBreak }
 	@media #{ $tbBreak }{
 	}//@media #{ $pcBreak }
 	@media #{ $smBreak }{
 		margin: auto;
-		width: 60%;
+		width: 80%;
 	}//@media #{ $pcBreak }
 }

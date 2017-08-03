@@ -178,9 +178,10 @@
 		@media #{ $tbBreak }{
 		}//@media #{ $pcBreak }
 		@media #{ $smBreak }{
-			width: (197/2)+px;
-			padding: 20px 0 0 50px;
-			background-size: contain;
+			// width: (197/2)+px;
+			// padding: 20px 0 0 50px;
+			// background-size: contain;
+			display: none;
 		}//@media #{ $pcBreak }
 	}//h2
 	ul{
@@ -206,7 +207,7 @@
 			margin: 0 0 0 -20px;
 			li {
 				img {
-					width: 80%;
+					// width: 80%;
 				}
 			}
 		}//@media #{ $pcBreak }

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php
-	if( is_singular() ){
+	if( is_singular() || is_404() ){
 		get_template_part( 'parts/title', 'single' );
 	}//is_single()
 	else {
@@ -11,8 +11,9 @@
 <main class="lout-main">
 <?php if( is_singular() ) { ?>
 	<article class="lout-main-contents">
-<?php } else { ?>
+<?php } else if( is_archive() || is_home() ) { ?>
 	<article class="lout-archive-contents">
+<?php } else if( is_404() ) { ?>
 <?php } ?>
 <?php get_template_part( 'parts/loop' ); ?>
 <?php if(! is_singular() ) { ?>
@@ -29,8 +30,7 @@
 			}
 		?>
 <?php } ?>
-</article><!--/.lout-main-contents-->
-
+</article>
 	<?php get_sidebar(); ?>
 </main>
 

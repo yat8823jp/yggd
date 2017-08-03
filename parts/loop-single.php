@@ -1,4 +1,3 @@
-<article class="lout-main-contents">
 <section class="lout-main-contents-postdata">
 
 <?php
@@ -36,5 +35,3 @@
 		}
 	}//if
 ?>
-
-</article><!--/.lout-main-contents-->

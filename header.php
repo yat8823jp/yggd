@@ -9,10 +9,7 @@
 <link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="<?php echo COMMON_PFIX; ?>/css/reset-css/reset.css">
 <link rel="stylesheet" href="<?php echo COMMON_PFIX; ?>/css/common.css">
-<link rel="icon" href="<?php echo COMMON_PFIX; ?>/favicon.ico" type="image/gif">
-<!--[if lt IE 9]>
-	<script src="<?php echo COMMON_PFIX; ?>/js/html5shiv.js"></script>
-<![endif]-->
+<link rel="shortcut icon" href="<?php echo COMMON_PFIX; ?>/favicon.ico" type="image/x-icon">
 <?php wp_head(); ?>
 </head>
 <body>

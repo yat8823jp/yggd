@@ -21,7 +21,6 @@
 </div><!--/.lout-archive-contents-postdata-box-->
 <div class="mod-archive-postdata-morebox">
 	<?php get_template_part( 'parts/share', 'end' ); ?>
-
 <?php
 	// $more = '<div class="mod-next-bt"><a href="' . get_the_permalink() . '">続きを読む →</a></div>';
 	$more = "";
