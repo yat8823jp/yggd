@@ -54,3 +54,34 @@
 .screen-reader-text {
 	width: auto;
 }
+
+table {
+	width: calc( 100% - 80px );
+	box-sizing: border-box;
+	@media #{ $pcBreak }{
+	}//@media #{ $pcBreak }
+	@media #{ $tbBreak } {
+	}
+	@media #{ $smBreak }{
+		width: calc( 100% - 40px );
+		word-wrap: break-word;
+		overflow-wrap : break-word;
+		word-break: break-all;
+		tr {
+			word-wrap:break-word;
+			word-break: break-all;
+			display: block;
+		}
+		td {
+			max-width: 360px;
+			width: calc( 100% - 40px );
+			line-height: 1.4;
+			// margin: auto 20px;
+			white-space: normal;
+			word-wrap: break-word;
+			overflow-wrap: break-word;
+			word-break: break-all;
+			// display : block;
+		}
+	}//@media #{ $pcBreak }
+}
