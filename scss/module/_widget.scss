@@ -49,6 +49,15 @@
 	.mod-widget-body {
 		padding: 25px;
 		font-size: 1.4rem;
+		div {
+			margin-bottom: 0;
+			@media #{ $pcBreak }{
+			}//@media #{ $pcBreak }
+			@media #{ $tbBreak }{
+			}//@media #{ $pcBreak }
+			@media #{ $smBreak }{
+			}//@media #{ $pcBreak }
+		}
 		img {
 			margin-bottom: 5px;
 			@media #{ $pcBreak }{
