@@ -16,27 +16,38 @@
 		}
 		.mod-comment-auth{
 			width: 204px;
-			height: 90px;
+			// height: 90px;
 			margin: 0 0 25px 0;
 			padding: 6px;
 			box-sizing: border-box;
 			background: url(../img/comment_auth_bg.jpg);
 			overflow: hidden;
 			float: left;
+			&::after {
+				@include clearfix;
+			}
 			dt {
 				margin: 0;
 				padding: 0;
 				float: left;
 				img {
+					margin-top: 0;
 					text-align: left;
+					vertical-align: top;
 				}
 			}
 			dd {
 				margin: 0;
 				padding: 0 0 0 88px;
 				h3 {
-					margin: 0;
+					margin: 0 0 5px 0;
+					text-align: left;
 					padding: 0;
+					line-height: 1;
+					border: none;
+				}
+				time {
+					font-size: 1.2rem;
 				}
 			}//dd
 			@media #{ $pcBreak }{

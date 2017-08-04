@@ -74,6 +74,15 @@
 		}
 		p {
 			margin: 0 0 20px 0;
+			text-align: left;
+			@media #{ $pcBreak }{
+				text-align: center;
+			}//@media #{ $pcBreak }
+			@media #{ $tbBreak }{
+			}//@media #{ $pcBreak }
+			@media #{ $smBreak }{
+				text-align: left;
+			}//@media #{ $pcBreak }
 			&:last-child {
 				margin-bottom: 0;
 			}
