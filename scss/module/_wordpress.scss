@@ -115,6 +115,7 @@ table {
 	}
 	@media #{ $smBreak }{
 		margin: auto 40px !important;
+		padding: 10px 0;
 		caption {
 			display: inline !important;
 		}

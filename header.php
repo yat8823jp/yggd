@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="<?php echo COMMON_PFIX; ?>/css/reset-css/reset.css">
 <link rel="stylesheet" href="<?php echo COMMON_PFIX; ?>/css/common.css">
 <link rel="shortcut icon" href="<?php echo COMMON_PFIX; ?>/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" type="image/png" href="<?php echo COMMON_PFIX; ?>/img/app/app_icon.png" sizes="152x152">
 <?php wp_head(); ?>
 </head>
 <body>
