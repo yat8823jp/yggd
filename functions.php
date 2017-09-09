@@ -27,6 +27,9 @@ function custom_attribute( $html ){
 	return $html;
 }
 
+add_image_size( 'default', 900, false );
+
+
 //カスタムメニュー追加
 register_nav_menu('mainmenu', 'メインメニュー');
 add_filter( 'walker_nav_menu_start_el', 'description_in_nav_menu', 10, 4 );

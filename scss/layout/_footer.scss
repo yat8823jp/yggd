@@ -101,6 +101,7 @@
 		}//.lout-footer-tagcloud-h
 		.tagcloud {
 			margin: 0 40px 40px;
+			text-align: left;
 			a {
 				margin: 0 15px 15px 0;
 				padding: 5px 10px;
@@ -178,6 +179,7 @@
 				img {
 					width: 65%;
 					height: auto;
+					margin: auto;
 					top: 20px;
 					position: relative;
 					z-index: 15;
@@ -200,6 +202,7 @@
 				color: #fff;
 				line-height: 1.7;
 				font-size: 1.4rem;
+				text-align: left;
 				a {
 					margin: auto;
 					color: #ccc;
