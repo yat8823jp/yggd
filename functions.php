@@ -18,7 +18,7 @@
 
 		wp_enqueue_style( 'poiret', '//fonts.googleapis.com/css?family=Poiret+One', false, null );
 		wp_enqueue_style( 'reset',  get_template_directory_uri() . '/css/reset-css/reset.css', array(), null, 'all' );
-		wp_enqueue_style( 'common', get_template_directory_uri() . '/css/reset-css/common.css', array(), $theme_version );
+		wp_enqueue_style( 'css/common', get_template_directory_uri() . '/css/common.css', array(), $theme_version );
 		wp_enqueue_style( 'style',  get_template_directory_uri() . '/style.css', array(), $theme_version );
 	}
 	add_action( 'wp_enqueue_scripts', 'msSytlesScripts' );
@@ -190,7 +190,3 @@
 		$content =  mb_substr( $content, 0, $length );//文字列を指定した長さで切り取る
 		return $content;
 	}
-
-	function content_end_ad( $addata ) {
-
-}
