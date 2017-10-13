@@ -8,7 +8,7 @@
  *  http://www.to-r.net
  *
  *--------------------------------------------------------------------------*/
-$( function(){
+jQuery( function($){
 	$( ".mod-related-item dd" ).heightLine();
 });
 ;(function($){
