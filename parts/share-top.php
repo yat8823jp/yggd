@@ -46,6 +46,7 @@ $httpsurl = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 				break;
 			endif;
 		endforeach;
+		echo $is_active;
 		return $is_active;
 	}
 	function scc_check( $sns ) {
@@ -54,7 +55,7 @@ $httpsurl = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 		$plugin = plugins_url() . '/sns-count-cache/sns-count-cache.php';
 		if( is_plugin_active( $plugin ) ) {
 			if(! function_exists( $sns( array( 'post_id' => 'home' ) ) ) ) :
-				echo esc_html( $sns( array( 'post_id' => 'home' ) ) );
+				$num = esc_html( $sns( array( 'post_id' => 'home' ) ) );
 			endif;
 		}
 		echo $num;
