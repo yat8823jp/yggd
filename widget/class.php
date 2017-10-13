@@ -1,8 +1,10 @@
 <?php
 class EyecatchWidgetItem extends WP_Widget {
-	function EyecatchWidgetItem() {
+	function __construct() {
 		parent::__construct (
-			false, $name = 'アイキャッチ付き投稿一覧' );
+			'EyecatchWidgetItem',
+			false, $name = 'アイキャッチ付き投稿一覧'
+		);
 	}
 	//フロント側の設定
 	function widget( $args, $instance ) {
