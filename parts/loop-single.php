@@ -1,3 +1,4 @@
+<?php locate_template( '/mod/share_chk.php', true, true ); ?>
 <section class="lout-main-contents-postdata">
 
 <?php
@@ -26,9 +27,17 @@
 
 <?php
 	if( is_single() ){
-		related_posts();
+		if( is_plugin_active( 'yet-another-related-posts-plugin/yarpp.php' ) ) {
+			related_posts();
+			if( comments_open() ) {
+				echo '<div class="deco"><img src="' . COMMON_PFIX . '/img/flower.png" alt=""></div>';
+				comments_template();
+			} else {
+				echo '<br>';
+			}
+		}
 		if( comments_open() ) {
-			echo '<div class="deco"><img src="' . COMMON_PFIX . '/img/flower.png" alt=""></div>';
+			echo '<div><img src="' . COMMON_PFIX . '/img/flower.png" alt=""></div>';
 			comments_template();
 		} else {
 			echo '<br>';

@@ -1,5 +1,7 @@
 <?php
 global $page, $paged;
+$description = get_bloginfo( 'description' );
+$canonical_url = home_url( '/' );
 $obj = get_queried_object();
 
 // var_dump( $obj );
@@ -38,7 +40,7 @@ $obj = get_queried_object();
 	$description = str_replace( "</p>", "", $description );
 //url
 	if ( is_home() ) {
-		$canonical_url = home_url() . "/";
+		$canonical_url = home_url( "/" );
 	} else if ( is_category() ) {
 		$canonical_url = get_category_link( get_query_var( 'cat' ) );
 	} else if ( is_page() || is_single() ) {
@@ -64,9 +66,9 @@ $obj = get_queried_object();
 <meta property="og:locale" content="ja_JP">
 <meta property="og:type" content="<?php echo $og_type ?>">
 <meta property="og:site_name" content="<?php bloginfo( 'name' ); ?>">
-<meta property="og:title" content="<?php echo $title; ?>">
-<meta property="og:url" content="<?php echo $canonical_url; ?>">
-<meta property="og:description" content="<?php echo $description; ?>">
+<meta property="og:title" content="<?php echo esc_html( $title ); ?>">
+<meta property="og:url" content="<?php echo esc_url( $canonical_url ); ?>">
+<meta property="og:description" content="<?php echo esc_html( $description ); ?>">
 <meta property="og:image" content="<?php echo $ogimage; ?>">
 <!-- facebook ogp -->
 <meta property="fb:admins" content="yat8823jp">
@@ -75,6 +77,6 @@ $obj = get_queried_object();
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="blog">
 <meta name="twitter:title" content="<?php echo $title; ?>">
-<meta name="twitter:description" content="<?php echo $description; ?>">
+<meta name="twitter:description" content="<?php echo esc_html( $description ); ?>">
 <meta name="twitter:image" content="<?php echo $ogimage; ?>">
 <meta name="twitter:url" content="//twitter.com/yat8823jp">
