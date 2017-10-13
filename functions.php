@@ -16,10 +16,10 @@
 		$theme         = wp_get_theme();
 		$theme_version = $theme -> get( 'Version' );
 
-		wp_enqueue_style( 'poiret', '//fonts.googleapis.com/css?family=Poiret+One', false, null );
-		wp_enqueue_style( 'reset',  get_template_directory_uri() . '/css/reset-css/reset.css', array(), null, 'all' );
-		wp_enqueue_style( 'common', get_template_directory_uri() . '/css/reset-css/common.css', array(), $theme_version );
-		wp_enqueue_style( 'style',  get_template_directory_uri() . '/style.css', array(), $theme_version );
+		wp_enqueue_style( 'poiret',  '//fonts.googleapis.com/css?family=Poiret+One', false, null );
+		wp_enqueue_style( 'reset',   COMMON_PFIX . '/css/reset-css/reset.css', array(), null, 'all' );
+		wp_enqueue_style( 'yatblog', COMMON_PFIX . '/css/yatblog.css', array(), $theme_version );
+		wp_enqueue_style( 'style',  COMMON_PFIX . '/style.css', array(), $theme_version );
 	}
 	add_action( 'wp_enqueue_scripts', 'msSytlesScripts' );
 

@@ -1,3 +1,4 @@
+<?php require_once locate_template( '/mod/share_chk.php' ); ?>
 <?php
 // 非SSL版の自身のURLを取得 $httpurlに格納
 $httpurl = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; // SSL版の自身のURLを取得 $httpsurlに格納
