@@ -1,0 +1,10 @@
+@charset "utf-8";
+@import "define/mixins";
+@import "define/variable";
+@import "define/default";
+@import "define/font";
+
+body {
+	background-color: #eaeae8 !important;
+	background-image: none !important;
+}

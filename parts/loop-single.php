@@ -8,7 +8,7 @@
 		$paragraphAfter= 1; //何番目の段落の下に表示するか
 		$content = apply_filters( 'the_content', get_the_content() );
 		$content = explode( "</p>", $content );
-		for ( $i = 0; $i <count( $content ); $i++ ) {
+		for ( $i = 0; $i < count( $content ); $i++ ) {
 			if ( $i == $paragraphAfter ) {
 				get_template_part( 'parts/more', 'ad' );
 			}

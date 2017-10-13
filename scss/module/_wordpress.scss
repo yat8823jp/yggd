@@ -134,3 +134,14 @@ table {
 		}
 	}
 }
+.crayon-syntax {
+	@media #{ $pcBreak }{
+		width: calc( 100% - 80px );
+		margin-left: 40px;
+	}
+}
+.crayon-num {
+	@media #{ $smBreak }{
+		display: none;
+	}
+}

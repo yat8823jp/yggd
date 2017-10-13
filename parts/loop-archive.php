@@ -22,11 +22,8 @@
 <div class="mod-archive-postdata-morebox">
 	<?php get_template_part( 'parts/share', 'end' ); ?>
 <?php
-	// $more = '<div class="mod-next-bt"><a href="' . get_the_permalink() . '">続きを読む →</a></div>';
 	$more = "";
-	// $content = '<div class="mod-archive-text">' . apply_filters( 'the_content', get_the_content( $more ) . '</div>');
 	$content = '<div class="mod-archive-text">' . apply_filters( 'the_content', get_the_content( $more ) . '</div>');
-	// echo $content;
 ?>
 
 </div><!--/.lout-archive-contents-postdata-morebox-->

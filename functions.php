@@ -4,20 +4,23 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 1120;
 }
 define( 'COMMON_PFIX', get_template_directory_uri() );
-
-//テーマ用スタイルシートとJavaScriptの読み込み
-function msSytlesScripts(){
-	// wp_deregister_script('jquery');//デフォルトのjQueryを読み込まない
-	wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', array(), null, 'all' );
-}
-add_action( 'wp_enqueue_scripts', 'msSytlesScripts' );
-
 //タイトルタグ有効
 add_theme_support( 'title-tag' );
 //feed有効
 add_theme_support( 'automatic-feed-links' );
 //アイキャッチ有効
 add_theme_support( 'post-thumbnails' );
+//エディタースタイル
+function yggdrasill_theme_add_editor_styles() {
+	add_editor_style( get_template_directory_uri() . "/css/editor-style.css" );
+}
+add_action( 'admin_init', 'yggdrasill_theme_add_editor_styles' );
+//テーマ用スタイルシートとJavaScriptの読み込み
+function msSytlesScripts(){
+	// wp_deregister_script('jquery');//デフォルトのjQueryを読み込まない
+	wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', array(), null, 'all' );
+}
+add_action( 'wp_enqueue_scripts', 'msSytlesScripts' );
 
 //アイキャッチのサイズ削除
 add_filter( 'post_thumbnail_html', 'custom_attribute' );
