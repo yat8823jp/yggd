@@ -29,4 +29,12 @@ $httpsurl = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 			</dl>
 		</a>
 	</li>
+	<li class="pocket metasns-item">
+		<a href="//www.getpocket.com/edit?u=<?php bloginfo('url'); ?>" rel="nofollow">
+			<dl class="metasns-item-set">
+				<dt><img src="<?php echo COMMON_PFIX . '/img/share/pocket_bt.png' ?>" alt="シェアする" class="metasns-pocket"></dt>
+				<dd><?php if(! function_exists( scc_get_share_pocket( array( 'post_id' => 'home' ) ) ) ) echo scc_get_share_pocket( array( 'post_id' => 'home' ) ); ?></dd>
+			</dl>
+		</a>
+	</li>
 </ul>

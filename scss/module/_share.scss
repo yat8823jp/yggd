@@ -59,6 +59,12 @@
 		@media #{ $smBreak }{
 		}
 	}
+	&-pocket {
+		width: 14px;
+		height: 14px;
+		@media #{ $smBreak }{
+		}
+	}
 	// li {
 	// 	margin: 0 3px 0 3px;
 	// 	padding: 5px 0;

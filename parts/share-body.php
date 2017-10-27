@@ -24,5 +24,13 @@
 			</dl>
 		</a>
 	</li>
+	<li class="pocket metasns-item">
+		<a href="//www.getpocket.com/edit?u=<?php the_permalink(); ?>" rel="nofollow">
+			<dl class="metasns-item-set">
+				<dt><img src="<?php echo COMMON_PFIX . '/img/share/pocket_bt.png' ?>" alt="シェアする" class="metasns-pocket"></dt>
+				<dd><?php if(! function_exists( 'scc_get_share_pocket()' ) ) echo scc_get_share_pocket(); ?></dd>
+			</dl>
+		</a>
+	</li>
 </ul>
 <?php }//is_404 ?>
