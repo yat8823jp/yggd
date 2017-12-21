@@ -136,14 +136,11 @@
 }//.mod-content-share
 
 .mod-content-share-end {
-	// margin-left: 160px;
-	// text-align: left;
 	@media #{ $pcBreak }{
 	}//@media #{ $pcBreak }
 	@media #{ $tbBreak }{
 	}//@media #{ $pcBreak }
 	@media #{ $smBreak }{
 		margin: auto;
-		width: 80%;
 	}//@media #{ $pcBreak }
 }
