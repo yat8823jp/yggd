@@ -129,7 +129,7 @@
 	}//.lout-footer-tagcloud
 	.lout-footer-auth {
 		width: $pcSideWid;
-		padding: 65px 0 0;
+		padding: 65px 0;
 		float: right;
 		@media #{ $pcBreak }{
 			width: $pdSideWid;
@@ -149,11 +149,12 @@
 		}//@media #{ $pcBreak }
 		.lout-footer-auth-h {
 			margin-bottom: 10px;
-			padding: 0;
+			padding: 0 0 0 50px;
 			font-size: 2.4rem;
 			color: #fff;
 			font-family: $hwebfont;
 			background: url(../img/common/footer_auth_key.png) no-repeat;
+			text-align: left;
 		}//.lout-footer-auth-h
 		dl {
 			@media #{ $smBreak }{
