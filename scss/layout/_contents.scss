@@ -126,14 +126,12 @@
 		.lout-content-share {
 			// height: 20px;
 			ul {
-				// margin: -15px 0 0 0;
 				padding: 0;
 				@media #{ $pcBreak }{
 				}//@media #{ $pcBreak }
 				@media #{ $tbBreak }{
 				}//@media #{ $pcBreak }
 				@media #{ $smBreak }{
-					// margin-left: 50px;
 				}//@media #{ $pcBreak }
 			}
 		}//.mod-content-share
