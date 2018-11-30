@@ -291,3 +291,14 @@
 		margin: 40px auto;
 	}//@media #{ $pcBreak }
 }
+
+.amazon-box {
+	margin: 0 40px 30px;
+	@media #{ $pcBreak }{
+	}//@media #{ $pcBreak }
+	@media #{ $tbBreak } {
+	}
+	@media #{ $smBreak }{
+		margin: 0 20px 15px;
+	}
+}

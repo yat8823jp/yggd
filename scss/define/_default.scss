@@ -70,8 +70,8 @@ div {
 
 p {
 	font-size: 1.6rem;
-	line-height: 1.6;
-	margin: 0 40px 30px;
+	line-height: 1.8;
+	margin: 0 40px 25px;
 	@media #{ $pcBreak }{
 	}//@media #{ $pcBreak }
 	@media #{ $tbBreak } {
@@ -222,10 +222,10 @@ img {
 ul, ol {
 	margin: 0 40px 15px 60px;
 	padding: 0 0 15px 20px;
-	font-size: 1.4rem;
+	font-size: 1.5rem;
 	line-height: 1.6;
 	&:last-child { padding-bottom: 0; }
-	li { padding-top: 5px; }
+	li { padding-top: 7px; }
 	@media #{ $pcBreak }{
 		transition: $transNormal;
 	}//@media #{ $pcBreak }
@@ -244,8 +244,8 @@ ol {
 }
 dl {
 	margin: 0 40px 40px;
-	font-size: 1.4rem;
-	line-height: 1.4;
+	font-size: 1.6rem;
+	line-height: 1.7;
 	dt { font-weight: bold; margin-bottom: 10px; }
 	dd { margin-left: 20px; }
 	@media #{ $pcBreak }{
