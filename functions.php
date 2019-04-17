@@ -20,6 +20,8 @@
 		wp_enqueue_style( 'reset',  get_template_directory_uri() . '/css/reset-css/reset.css', array(), null, 'all' );
 		wp_enqueue_style( 'css/common', get_template_directory_uri() . '/css/common.css', array(), $theme_version );
 		wp_enqueue_style( 'style',  get_template_directory_uri() . '/style.css', array(), $theme_version );
+		wp_enqueue_script( 'adobefont', get_template_directory_uri() . '/js/adobefont.js', false, false );
+		wp_enqueue_script( 'fontplus', '//webfont.fontplus.jp/accessor/script/fontplus.js?b1QRw-8tAx4%3D&box=UDQBWShX47k%3D&aa=1&ab=2', false, false );
 	}
 	add_action( 'wp_enqueue_scripts', 'msSytlesScripts' );
 

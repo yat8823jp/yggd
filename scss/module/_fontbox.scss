@@ -1,0 +1,35 @@
+.fontbox {
+	padding: 40px;
+	background: url( ../img/block/fontbox_bg.jpg );
+	@media #{ $pcBreak }{
+	}//@media #{ $pcBreak }
+	@media #{ $tbBreak } {
+		padding: 20px;
+	}//@media #{ $tbBreak }
+	@media #{ $smBreak }{
+	}
+	.ttl {
+		margin: 0 0 20px;
+		font-size: 2.4rem;
+		color: #333;
+		border: none;
+		@media #{ $pcBreak }{
+		}//@media #{ $pcBreak }
+		@media #{ $tbBreak } {
+			margin-bottom: 10px;
+		}//@media #{ $tbBreak }
+		@media #{ $smBreak }{
+		}
+	}
+	p {
+		font-size: 1.6rem;
+		line-height: 1.8;
+		@media #{ $pcBreak }{
+		}//@media #{ $pcBreak }
+		@media #{ $tbBreak } {
+			margin: 10px;
+		}//@media #{ $tbBreak }
+		@media #{ $smBreak }{
+		}
+	}
+}

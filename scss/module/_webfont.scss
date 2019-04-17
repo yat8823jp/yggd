@@ -7,3 +7,16 @@
 .m-plus-round-1c { font-family: 'M PLUS Rounded 1c', sans-serif; }
 .kosugi { font-family: 'Kosugi', sans-serif; }
 .kosugi-maru { font-family: 'Kosugi Maru', sans-serif; }
+
+@font-face{
+	font-family: 'oradano'; /* お好きな名前にしましょう */
+	src: url('../font/OradanoGSRR.eot'); /* IE9以上用 */
+	src:
+		url('../font/OradanoGSRR.woff') format('woff'), /* モダンブラウザ用 */
+		url('../font/OradanoGSRR.ttf') format('truetype'); /* iOS, Android用 */
+	font-weight: normal; /* 念の為指定しておきます */
+	font-style: normal;
+}
+.oradano {
+	font-family: 'oradano';
+}
