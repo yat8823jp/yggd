@@ -52,8 +52,8 @@ gulp.task( 'scss', function( done ) {
 		.pipe( scss( {
 			outputStyle: 'expanded'
 		} ) )
-		.pipe( sourcemaps.write( './css' ) )
-		.pipe( gulp.dest( './css' ) );
+		.pipe( sourcemaps.write( './' ) )
+		.pipe( gulp.dest( './css/' ) );
 	done();
 });
 

@@ -196,10 +196,8 @@ table {
 	}
 }
 .crayon-syntax {
-	@media #{ $pcBreak }{
-		width: calc( 100% - 80px );
-		margin-left: 40px;
-	}
+	width: calc( 100% - 80px );
+	margin: auto;
 }
 .crayon-num {
 	@media #{ $smBreak }{

@@ -2115,11 +2115,9 @@ table td {
   }
 }
 
-@media screen and (max-width: 1374px) {
-  .crayon-syntax {
-    width: calc( 100% - 80px);
-    margin-left: 40px;
-  }
+.crayon-syntax {
+  width: calc( 100% - 80px);
+  margin: auto;
 }
 
 @media screen and (max-width: 736px) {
@@ -2879,4 +2877,4 @@ table td {
   border-bottom: none !important;
 }
 
-/*# sourceMappingURL=css/common.css.map */
+/*# sourceMappingURL=common.css.map */
