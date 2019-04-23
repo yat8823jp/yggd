@@ -4,8 +4,9 @@
 	define( 'COMMON_PFIX', get_template_directory_uri() );
 
 	add_theme_support( 'title-tag' );//タイトルタグ有効
-	add_theme_support( 'automatic-feed-links' );//feed有効
+	// add_theme_support( 'automatic-feed-links' );//feed有効
 	add_theme_support( 'post-thumbnails' );//アイキャッチ有効
+	remove_action('wp_head', 'feed_links_extra', 3);
 
 	function yggdrasill_theme_add_editor_styles() {
 		add_editor_style( get_template_directory_uri() . "/css/editor-style.css" );
