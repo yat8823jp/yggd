@@ -2867,6 +2867,23 @@ table td {
   }
 }
 
+.wp-block-gallery {
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  list-style-type: none;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.wp-block-gallery .blocks-gallery-item {
+  padding: 0;
+}
+
+.wp-block-gallery figcaption a {
+  color: #fff;
+}
+
 /*-----------------------------------*/
 /* State */
 /*-----------------------------------*/

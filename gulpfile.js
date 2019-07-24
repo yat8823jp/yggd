@@ -101,7 +101,7 @@ gulp.task( 'pleeease', function( done ) {
 	return gulp.src( './css/common.css' )
 		.pipe( pleeease( {
 			sass: true,
-			minifier: false //圧縮の有無 true/false
+			minifier: true //圧縮の有無 true/false
 		} ) )
 		.pipe( plumber ( {
 			errorHandler: notify.onError( 'Error: <%= error.message %>' )
@@ -134,10 +134,11 @@ gulp.task( 'imagemin', function( done ) {
  * Useref
  */
 gulp.task( 'html', function ( done ) {
-	return gulp.src( './**/*.+( html|php )' )
+	return gulp.src( './**/*.+( html|php|js )' )
 		.pipe( useref( { searchPath: [ '.', 'dev' ] } ) )
-		.pipe( gulpif( '*.js', uglify() ) )
-		.pipe( gulpif( '*.css', minifyCss() ) )
+		.pipe( gulpif( '*.js', uglify().minify() ) )
+		// .pipe( gulpif( '*.css', minifyCss() ) )
+		.pipe( gulpif( '*.css', cleanCSS() ) )
 		.pipe( gulp.dest( paths.dstrootDir ) );
 	done();
 });
@@ -155,7 +156,7 @@ gulp.task( 'browser-sync', function( done ) {
 		// 	}
 		// },
 		proxy: {
-			target: "yatblog.local"
+			target: "yatblog.wp"
 		},
 		notify: true
 	});
