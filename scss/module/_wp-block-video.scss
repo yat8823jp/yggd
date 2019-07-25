@@ -7,4 +7,10 @@
 .wp-block-embed-youtube {
 	padding: 20px;
 	box-sizing: border-box;
+	figcaption {
+		line-height: 1.6;
+	}
+}
+.lout-main-contents .lout-main-contents-postdata .wp-block-embed__wrapper {
+	margin-bottom: 20px;
 }
