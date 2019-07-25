@@ -2884,6 +2884,11 @@ table td {
   color: #fff;
 }
 
+.wp-block-video video {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
 /*-----------------------------------*/
 /* State */
 /*-----------------------------------*/
