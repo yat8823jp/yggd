@@ -2899,7 +2899,11 @@ table td {
 }
 
 .lout-main-contents .lout-main-contents-postdata .wp-block-embed__wrapper {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+.rll-youtube-player {
+  padding-bottom: 10px;
 }
 
 /*-----------------------------------*/
