@@ -47,7 +47,7 @@ gulp.task( 'scss', function( done ) {
 		.pipe( bulkSass() )
 		.pipe( rename( {
 			sass: true,
-			minifier: false //圧縮の有無 true/false
+			minifier: true //圧縮の有無 true/false
 		} ) )
 		.pipe( scss( {
 			outputStyle: 'expanded'
@@ -74,7 +74,7 @@ gulp.task( 'browserify', function ( done ) {
 	};
 	var b = browserify ( option.bundleOption )
 		.transform( babelify.configure ( {
-			compact: false,
+			compact: true,
 			presets: ["es2015"]
 		} ) )
 		.transform( browserifyShim );
