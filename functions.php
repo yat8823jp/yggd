@@ -23,6 +23,7 @@
 		wp_enqueue_style( 'style',  get_template_directory_uri() . '/style.css', array(), $theme_version );
 		wp_enqueue_script( 'adobefont', get_template_directory_uri() . '/js/adobefont.js', false, false );
 		wp_enqueue_script( 'fontplus', '//webfont.fontplus.jp/accessor/script/fontplus.js?b1QRw-8tAx4%3D&box=UDQBWShX47k%3D&aa=1&ab=2', false, false );
+		wp_enqueue_script( 'heightLine', get_template_directory_uri() . '/js/heightLine/jquery.heightLine.js', false, true );
 	}
 	add_action( 'wp_enqueue_scripts', 'msSytlesScripts' );
 

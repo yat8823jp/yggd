@@ -6,9 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no">
 <?php get_template_part('parts/meta', 'description'); ?>
-<link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="<?php echo COMMON_PFIX; ?>/css/reset-css/reset.css">
-<link rel="stylesheet" href="<?php echo COMMON_PFIX; ?>/css/common.css">
 <link rel="shortcut icon" href="<?php echo COMMON_PFIX; ?>/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" type="image/png" href="<?php echo COMMON_PFIX; ?>/img/app/app_icon.png" sizes="152x152">
 <link rel="alternate" type="application/?feed=atom" title="<?php echo bloginfo('name'); ?> atomフィード" href="<?php bloginfo('atom_url'); ?>">

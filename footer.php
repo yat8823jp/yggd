@@ -21,7 +21,6 @@
 	</div><!--/.lout-copyright-->
 </footer>
 
-<script src="<?php echo COMMON_PFIX; ?>/js/heightLine/jquery.heightLine.js"></script>
 <!-- endbuild -->
 <?php get_template_part( 'parts/analysis' ); ?>
 <?php wp_footer(); ?>
