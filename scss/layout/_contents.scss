@@ -187,7 +187,7 @@
 		background: url(../img/content_sub_h.png) no-repeat;
 		box-shadow: none;
 		font-family: $hwebfont;
-		// position: relative;
+		font-display: swap;
 		position: absolute;
 		@media #{ $pcBreak }{
 		}//@media #{ $pcBreak }

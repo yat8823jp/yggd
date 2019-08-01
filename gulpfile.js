@@ -50,7 +50,8 @@ gulp.task( 'scss', function( done ) {
 			minifier: true //圧縮の有無 true/false
 		} ) )
 		.pipe( scss( {
-			outputStyle: 'expanded'
+			// outputStyle: 'expanded'
+			outputStyle: 'compressed'
 		} ) )
 		.pipe( sourcemaps.write( './' ) )
 		.pipe( gulp.dest( './css/' ) );

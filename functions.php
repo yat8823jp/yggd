@@ -17,15 +17,56 @@
 		$theme         = wp_get_theme();
 		$theme_version = $theme -> get( 'Version' );
 
-		wp_enqueue_style( 'poiret', '//fonts.googleapis.com/css?family=Poiret+One', false, null );
 		wp_enqueue_style( 'reset',  get_template_directory_uri() . '/css/reset-css/reset.css', array(), null, 'all' );
 		wp_enqueue_style( 'css/common', get_template_directory_uri() . '/css/common.css', array(), $theme_version );
 		wp_enqueue_style( 'style',  get_template_directory_uri() . '/style.css', array(), $theme_version );
-		wp_enqueue_script( 'adobefont', get_template_directory_uri() . '/js/adobefont.js', false, false );
-		wp_enqueue_script( 'fontplus', '//webfont.fontplus.jp/accessor/script/fontplus.js?b1QRw-8tAx4%3D&box=UDQBWShX47k%3D&aa=1&ab=2', false, false );
 		wp_enqueue_script( 'heightLine', get_template_directory_uri() . '/js/heightLine/jquery.heightLine.js', false, true );
+		if( ! ( is_front_page() || is_page() ) ) {
+			wp_enqueue_style( 'poiret', '//fonts.googleapis.com/css?family=Poiret+One', false, null );
+			wp_enqueue_script( 'fontplus', '//webfont.fontplus.jp/accessor/script/fontplus.js?b1QRw-8tAx4%3D&box=UDQBWShX47k%3D&aa=1&ab=2', false, false );
+			wp_enqueue_script( 'adobefont', get_template_directory_uri() . '/js/adobefont.js', false, false );
+		}
+		if( is_front_page() || is_page() ) {
+			wp_dequeue_script( 'crayon_js' );
+			wp_dequeue_style( 'crayon' );
+			wp_dequeue_style( 'crayon-theme-classic' );
+			wp_dequeue_style( 'crayon-font-monaco' );
+		}
 	}
 	add_action( 'wp_enqueue_scripts', 'msSytlesScripts' );
+// ---------------------------------------------------------------------------
+// WordpressのJavascriptやCSSのハンドル名をHTMLソースに表示する
+// ---------------------------------------------------------------------------
+// function my_get_dependency( $dependency ) {
+//     $dep = "";
+//     if ( is_a( $dependency, "_WP_Dependency" ) ) {
+//         $dep .= "$dependency->handle";
+//         $dep .= " [" . implode( " ", $dependency->deps ) . "]";
+//         $dep .= " '$dependency->src'";
+//         $dep .= " '$dependency->ver'";
+//         $dep .= " '$dependency->args'";
+//         $dep .= " (" . implode( " ", $dependency->extra ) . ")";
+//     }
+//     return "$dep\n";
+// }
+// function my_style_queues() {
+//     global $wp_styles;
+//     echo "<!-- WP_Dependencies for styles\n";
+//     foreach ( $wp_styles->queue as $val ) {
+//         echo my_get_dependency( $wp_styles->registered[ $val ] );
+//     }
+//     echo "-->\n";
+// }
+// add_action( 'wp_print_styles', 'my_style_queues', 9999 );
+// function my_script_queues() {
+//     global $wp_scripts;
+//     echo "<!-- WP_Dependencies for scripts\n";
+//     foreach ( $wp_scripts->queue as $val ) {
+//         echo my_get_dependency( $wp_scripts->registered[ $val ] );
+//     }
+//     echo "-->\n";
+// }
+// add_action( 'wp_print_scripts', 'my_script_queues', 9999 );
 
 	//アイキャッチのサイズ削除
 	add_filter( 'post_thumbnail_html', 'custom_attribute' );
