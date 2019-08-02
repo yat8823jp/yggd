@@ -2,7 +2,7 @@
 .wp-block-gallery {
 	width: 100%;
 	margin: 0;
-	padding: 20px;
+	padding: 20px 40px;
 	list-style-type: none;
 	box-sizing: border-box;
 	display: flex;
@@ -11,6 +11,7 @@
 	@media #{ $tbBreak } {
 	}//@media #{ $tbBreak }
 	@media #{ $smBreak }{
+		padding: 20px;
 	}//@media #{ $smBreak }
 
 	.blocks-gallery-item {
