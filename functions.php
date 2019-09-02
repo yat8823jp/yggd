@@ -7,6 +7,7 @@
 	// add_theme_support( 'automatic-feed-links' );//feed有効
 	add_theme_support( 'post-thumbnails' );//アイキャッチ有効
 	remove_action('wp_head', 'feed_links_extra', 3);
+	// add_theme_support( 'responsive-embeds' );
 
 	function yggdrasill_theme_add_editor_styles() {
 		add_editor_style( get_template_directory_uri() . "/css/editor-style.css" );
@@ -18,13 +19,13 @@
 		//スタイルシート読み込み設定
 		wp_register_style( 'reset' ,  get_template_directory_uri() . '/css/reset-css/reset.css' );
 		wp_register_style( 'style' ,  get_template_directory_uri() . '/style.css' );
-		wp_register_style( 'poiret', '//fonts.googleapis.com/css?family =Poiret+One' );
+		wp_register_style( 'poiret', '//fonts.googleapis.com/css?family=Poiret+One&display=swap' );
 		wp_register_style( 'main'  ,  get_template_directory_uri() . '/css/main.css' );
 	}
 	function yggdrasill_regist_jquery() {
 		wp_deregister_script('jquery');
-		wp_enqueue_script( 'jquery', '//code.jquery.com/jquery-3.4.1.slim.min.js', '', '3.4.1', true );
-		wp_enqueue_script( 'jquery-easing', '//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.js', 'jquery', '1.4.1', true );
+		wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-3.4.1.slim.min.js', '', '3.4.1', true );
+		wp_enqueue_script( 'jquery-easing', get_template_directory_uri() . '/js/jquery-easing1.4.1.min.js', 'jquery', '1.4.1', true );
 	}
 	add_action( 'wp_print_scripts', 'yggdrasill_regist_jquery' );
 
@@ -32,6 +33,8 @@
 		yggdrasill_register_styles();
 		wp_enqueue_style(  'style'      , array(), $theme_version );
 		wp_enqueue_script( 'heightLine' , get_template_directory_uri() . '/js/heightLine/jquery.heightLine.js', false, true );
+		wp_enqueue_script( 'webfont', '//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js', array(), null, true );
+		wp_enqueue_script( 'yggdrasillfont', get_template_directory_uri() . '/js/yggdrasillfont.js', array( 'webfont' ), null, true );
 		// wp_dequeue_style(  'jetpack_css' );
 		wp_dequeue_style(  'yarppWidgetCss' );
 		wp_dequeue_style(  'wp-block-library' );
@@ -71,8 +74,8 @@
 		wp_enqueue_script( 'devicepx' );
 		wp_enqueue_script( 'heightLine' );
 		// wp_enqueue_script( 'milestone' );
-		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'jquery-easing' );
+		// wp_enqueue_script( 'jquery' );
+		// wp_enqueue_script( 'jquery-easing' );
 	}
 	add_action( 'wp_footer', 'yggdrasill_footer_read_styles' );
 	function add_alt_change_preload ( $tag ) {
