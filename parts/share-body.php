@@ -1,13 +1,13 @@
-<?php if( ! is_404() ) { ?>
+<?php if( ! is_404() ) : ?>
 	<?php
 		$title = preg_replace( "/(['#'].*)/", '', esc_html( get_the_title() ) );
 		preg_match_all( "/(['#'].*)/", esc_html( get_the_title() ), $hash_title );
-		$hashs = explode( " ", $hash_title[0][0] );
-		foreach( $hashs as $hash ) {
-			if ( $hash === reset( $hashs ) ) {
-				$hash_word .= preg_replace( "/(['#'])/", '', $hash  );
-			} else {
-				$hash_word .= preg_replace( "/(['#'])/", ',', $hash  );
+		if ( $hash_title[0] ) {
+			$hashs = explode( " ", $hash_title[0][0] );
+			foreach( $hashs as $hash ) {
+				if ( $hash === reset( $hashs ) ) {
+					$hash_word = preg_replace( "/(['#'])/", '', $hash  );
+				}
 			}
 		}
 	?>
@@ -21,7 +21,7 @@
 		</a>
 	</li>
 	<li class="hateb metasns-item">
-		<a href="//twitter.com/share/?text=<?php echo $title; ?>｜YATのBlog&amp;url=<?php the_permalink(); ?>&amp;hashtags=<?php echo $hash_word; ?>"  onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow">
+		<a href="//twitter.com/share/?text=<?php echo $title; ?>｜YATのBlog&amp;url=<?php the_permalink(); ?>&amp;hashtags=<?php if( isset( $hash_word ) ) { echo $hash_word; } ?>"  onClick="window.open(encodeURI(decodeURI(this.href)), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" rel="nofollow">
 			<dl class="metasns-item-set">
 				<dt><img src="<?php echo COMMON_PFIX . '/img/share/twitter_bt.png' ?>" alt="ツイッターでつぶやく" class="metasns-tw"></dt>
 				<dd><?php if(! function_exists('scc_get_share_twitter()')) echo scc_get_share_twitter(); ?></dd>
@@ -45,4 +45,4 @@
 		</a>
 	</li>
 </ul>
-<?php }//is_404 ?>
+<?php endif;//is_404 ?>

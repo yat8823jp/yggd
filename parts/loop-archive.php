@@ -21,10 +21,9 @@
 </div><!--/.lout-archive-contents-postdata-box-->
 <div class="mod-archive-postdata-morebox">
 	<?php get_template_part( 'parts/share', 'end' ); ?>
-<?php
-	$more = "";
-	$content = '<div class="mod-archive-text">' . apply_filters( 'the_content', get_the_content( $more ) . '</div>');
-?>
-
+	<?php
+		$more = "";
+		// $content = '<div class="mod-archive-text">' . apply_filters( 'the_content', get_the_content( $more ) . '</div>');
+	?>
 </div><!--/.lout-archive-contents-postdata-morebox-->
 </section><!--/.mod-archive-postdata-->

@@ -30,6 +30,9 @@
 	add_action( 'wp_print_scripts', 'yggdrasill_regist_jquery' );
 
 	function yggdrasill_read_order_styles_scripts(){
+		$theme = wp_get_theme();
+		$theme_version = $theme->get( 'Version' );
+
 		yggdrasill_register_styles();
 		wp_enqueue_style(  'style'      , array(), $theme_version );
 		wp_enqueue_script( 'heightLine' , get_template_directory_uri() . '/js/heightLine/jquery.heightLine.js', false, true );
