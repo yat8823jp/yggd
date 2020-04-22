@@ -15,10 +15,10 @@
 	}//@media #{ $pcBreak
 	&-item {
 		a {
-			width: 75px;
+			width: 80px;
 			height: 35px;
 			margin-top: 11px;
-			padding: 5px 6px 11px 8px;
+			padding: 5px 6px 11px 0px;
 			background: url(../img/share/metasns_btbg.png) no-repeat;
 			text-decoration: none;
 			display: inline-block;
@@ -26,6 +26,7 @@
 		}
 		&-set {
 			vertical-align: middle;
+			line-height: 1.3;
 			dt {
 				display: inline;
 				img {
@@ -110,7 +111,7 @@
 		margin: auto;
 		// vertical-align: middle;
 		li {
-			margin-right: 10px;
+			// margin-right: 10px;
 			display: inline;
 			font-size: 1.4rem;
 		}

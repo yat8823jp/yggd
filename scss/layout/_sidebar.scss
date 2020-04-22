@@ -14,4 +14,8 @@
 	@media #{ $smBreak }{
 		width: $smSideWid;
 	}//@media #{ $pcBreak }
+	p {
+		font-size: 1.6rem;
+		line-height: 1.6;
+	}
 }//.lout-sidebar

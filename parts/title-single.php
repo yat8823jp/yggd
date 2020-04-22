@@ -20,7 +20,7 @@
 			</li>
 			<li>
 				<dl>
-					<?php the_tags('<dt>タグ：</dt><dd>', '</dd><dd>', '</dd>'); ?>
+					<?php the_tags('<dt>タグ：</dt><dd class="post-tags">', '</dd><dd class="post-tags">', '</dd>'); ?>
 				</dl>
 			</li>
 		</ul>

@@ -32,7 +32,7 @@ h2 {
 }
 h3 {
 	font-size: 2.0rem;
-	line-height: 1.8;
+	line-height: 2.0;
 	margin: 80px 40px 30px;
 	padding-bottom: 10px;
 	font-weight: bold;
@@ -69,12 +69,13 @@ div {
 }
 
 p {
-	font-size: 1.6rem;
-	line-height: 1.8;
-	margin: 0 40px 25px;
+	font-size: 1.8rem;
+	line-height: 2.0;
+	margin: 0 80px 25px;
 	@media #{ $pcBreak }{
 	}//@media #{ $pcBreak }
 	@media #{ $tbBreak } {
+		margin: 0 40px 25px;
 	}//@media #{ $tbBreak }
 	@media #{ $smBreak }{
 		margin: 0 20px 30px;
@@ -85,8 +86,8 @@ blockquote{
 	margin: 0 10px 50px 0;
 	padding: 40px 20px 20px 20px;
 	border-left: 5px solid #b9b9b9;
-	font-size: 1.6rem;
-	line-height: 1.6;
+	font-size: 1.8rem;
+	line-height: 2.0;
 	color: #666;
 	font-style: italic;
 	box-sizing: border-box;
@@ -126,7 +127,7 @@ table {
 	margin: 0 40px 40px;
 	background: url(../img/table_bg.jpg);
 	box-sizing: border-box;
-	font-size: 1.6rem;
+	font-size: 1.8rem;
 	@include dropshadow;
 	@media #{ $pcBreak }{
 	}//@media #{ $pcBreak }
@@ -137,11 +138,12 @@ table {
 	}//@media #{ $smBreak }
 	tr {
 		th, td {
-			padding: 14px;
+			padding: 7px 12px;
 			border-right: 1px solid #c8c8c8;
 			vertical-align: middle;
 			text-align: left;
 			background: url(../img/widget_h_line.png) repeat-x;
+			font-size: 1.6rem;
 			&:last-child {
 				border: none;
 			}
@@ -220,22 +222,25 @@ img {
 }
 
 ul, ol {
-	margin: 0 40px 15px 60px;
+	margin: 0 80px 15px 100px;
 	padding: 0 0 15px 20px;
-	font-size: 1.5rem;
-	line-height: 1.6;
+	font-size: 1.6rem;
+	line-height: 1.5;
 	&:last-child { padding-bottom: 0; }
-	li { padding-top: 7px; }
 	@media #{ $pcBreak }{
 		transition: $transNormal;
 	}//@media #{ $pcBreak }
 	@media #{ $tbBreak }{
+		margin: 0 40px 15px 60px;
 		transition: $transNormal;
 	}//@media #{ $pcBreak }
 	@media #{ $smBreak }{
 		margin: 0 20px 20px 20px;
 		transition: $transNormal;
 	}//@media #{ $pcBreak }
+	li {
+		padding-top: 10.5px;
+	}
 }
 ul { list-style-type: disc; }
 ol {
@@ -244,7 +249,7 @@ ol {
 }
 dl {
 	margin: 0 40px 40px;
-	font-size: 1.6rem;
+	font-size: 1.8rem;
 	line-height: 1.7;
 	dt { font-weight: bold; margin-bottom: 10px; }
 	dd { margin-left: 20px; }
@@ -259,18 +264,28 @@ dl {
 
 pre {
 	width: 100%;
-	padding: 20px;
+	padding: 20px 80px;
 	box-sizing: border-box;
-	white-space: pre-wrap;
+	white-space: pre;
 	word-wrap: break-word;
+	overflow-x: scroll;
+	font-family: 'Source Sans Pro', sans-serif;
 	background: url(../img/widget_h_line.png) repeat-x bottom #fff;
 	margin-bottom: 20px;
-	line-height: 1.4;
+	font-size: 1.6rem;
+	line-height: 1.8;
+	@media #{ $tbBreak } {
+		padding: 40px;
+	}//@media #{ $tbBreak }
+	@media #{ $smBreak }{
+		padding: 20px;
+	}
 }
 code {
-	background: #d6d6d6;
+	// background: #d6d6d6;
+	font-family: 'Source Sans Pro', sans-serif;
 	padding: 3px 5px;
-	font-weight: bold;
+	// font-weight: bold;
 }
 strong {
 	font-weight: bold;
@@ -297,4 +312,81 @@ a {
 .imgauto {
 	width: auto;
 	height: auto;
+}
+.wp-block-video {
+	padding: 0 40px;
+	@media #{ $pcBreak }{
+		padding: 0 20px;
+	}
+	@media #{ $tbBreak } {
+	}
+	@media #{ $smBreak }{
+		padding: 0;
+	}
+	video {
+		padding: 0;
+		@media #{ $pcBreak }{
+		}
+		@media #{ $tbBreak } {
+		}
+		@media #{ $smBreak }{
+		}
+	}
+}
+
+//SyntaxHighlight
+
+.hcb_wrap pre::before {
+	background-color: #dedede;
+}
+.hcb_wrap pre::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	box-sizing: border-box;
+	min-width: 4em;
+	padding: 0 10px;
+	font-size: 12px;
+	font-family: 'Source Sans Pro', sans-serif;
+	line-height: 20px;
+	text-align: center;
+	content: attr(data-lang);
+}
+.hcb_wrap pre.prism, .hcb_wrap pre.prism code {
+	color: #1f1e1e;
+	text-shadow: 0 1px #fff;
+	background: #f7f6f6;
+}
+.hcb_wrap pre.line-numbers {
+	position: static;
+	padding-left: 3.75em;
+	counter-reset: linenumber;
+}
+.hcb_wrap .line-numbers .line-numbers-rows {
+	position: absolute;
+	top: -2px;
+	left: -3.75em;
+	width: 3em;
+	font-size: inherit;
+	letter-spacing: -1px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	pointer-events: none;
+}
+.line-numbers .line-numbers-rows {
+	border-right: 1px solid #999;
+}
+.hcb_wrap code, .hcb_wrap span {
+	box-sizing: border-box;
+	font-size: inherit;
+	font-family: 'Source Sans Pro', sans-serif;
+	line-height: 1.5;
+}
+
+.hcb_wrap pre.prism {
+	overflow-x: scroll;
+	white-space: pre;
 }

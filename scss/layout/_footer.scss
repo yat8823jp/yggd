@@ -32,11 +32,13 @@
 			@include beforeafter;
 		}
 		&::before {
+			width: 100%;
 			height: 24px;
 			top: -20px;
 			background: url(../img/common/footer_tagclud_top.png) repeat-x;
 		}
 		&::after {
+			width: 100%;
 			height: 12px;
 			bottom: -12px;
 			background: url(../img/common/footer_tagclud_bottom.png) repeat-x;

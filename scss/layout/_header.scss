@@ -103,7 +103,7 @@
 	}//.mod-site-search
 	.mod-headside-text {
 		top: 210px;
-		left: 10%;
+		left: -700px;
 		font-size: 1.6rem;
 		position: absolute;
 		@media #{ $pcBreak }{
@@ -119,7 +119,7 @@
 			background: url(../img/common/head_side_text_tb.png) no-repeat;
 			left: 5%;
 			img { display: none; }
-		}//@media #{ $pcBreak }
+		}//@media #{ $tbBreak }
 		@media #{ $smBreak }{
 			width: 67px;
 			height: 55px;
@@ -127,7 +127,7 @@
 			left: 7%;
 			background: url(../img/common/head_side_text_sm.png) no-repeat;
 			img { display: none; }
-		}//@media #{ $pcBreak }
+		}//@media #{ $smBreak }
 	}
 	.mod-site-search-inputarea {
 		width: 200px;

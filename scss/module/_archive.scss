@@ -21,6 +21,7 @@
 			display: table-cell;
 			position: absolute;
 			filter: alpha(opacity=20);
+			object-fit: cover;
 			opacity: 0.2;
 			z-index: 2;
 			@media #{ $pcBreak }{
