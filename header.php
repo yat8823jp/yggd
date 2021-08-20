@@ -15,7 +15,6 @@
 </head>
 <body class="is-fadeload">
 <?php get_template_part( 'parts/adsense' ); ?>
-<?php get_template_part( 'parts/analysis', 'google' ); ?>
 <header class="lout-header">
 	<div class="lout-main">
 		<div class="mod-container">

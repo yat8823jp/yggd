@@ -16,13 +16,12 @@
 	</div><!--/.lout-main-->
 	<div class="lout-copyright">
 		<div class="mod-container">
-			<address class="lout-copyright-body">Copyright 2009 Yat</address>
+			<address class="lout-copyright-body">Copyright 2009 YAT</address>
 		</div>
 	</div><!--/.lout-copyright-->
 </footer>
 
 <!-- endbuild -->
-<?php get_template_part( 'parts/analysis' ); ?>
 <script>var cb = function() {
 var l = document.createElement('link'); l.rel = 'stylesheet';
 l.href = 'PATH_TO_COMBINED_CSS_FILE';

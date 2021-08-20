@@ -1,0 +1,56 @@
+.mod-related {
+    list-style-type: none;
+    margin-left: -10px;
+    text-align: center;
+    padding: 0;
+    .mod-related-item {
+        width: 400px;
+        margin: 0 0 25px 10px;
+        padding: 0;
+        text-align: center;
+        display: inline-block;
+        vertical-align: top;
+        dl {
+            margin: 0 auto;
+            dt {
+                margin: 0;
+                padding: 0;
+                img {
+                    width: 100%;
+                    margin: 0 0 10px;
+                    padding: 0;
+                    border: 1px solid #b1a567;
+                    box-sizing: border-box;
+                }
+            }
+            dd {
+                margin: 0;
+                padding: 0;
+                text-align: left;
+                line-height: 1.6;
+            }
+        }//dl
+    }//.mod-related-item
+    @media #{ $pcBreak }{
+    }//@media #{ $pcBreak }
+    @media #{ $tbBreak }{
+    }//@media #{ $pcBreak }
+    @media #{ $smBreak }{
+        .mod-related-item {
+            width: auto;
+            dl {
+                dt {
+                    width: 100%;
+                    img {
+                        max-width: 100%;
+                        box-sizing: border-box;
+                    }
+                }//dt
+                dd {
+                    padding: 0 10px;
+                    box-sizing: border-box;
+                }
+            }//dl
+        }
+    }
+}//.mod-related
