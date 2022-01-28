@@ -1,23 +1,26 @@
+@use "../define/variable";
+@use "../define/mixins";
+
 .lout-main {
-	width: $pcMainWid;
-	padding-left: $pcSideWid;
+	width: variable.$pcMainWid;
+	padding-left: variable.$pcSideWid;
 	margin: auto;
 	// position: relative;
 	z-index: 1;
 
-	@media #{ $pcBreak }{
-		width: $pcContentWid;
+	@media #{ variable.$pcBreak }{
+		width: variable.$pcContentWid;
 		padding-left: 0;
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak }{
-		width: $tbContentWid;
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak }{
+		width: variable.$tbContentWid;
 		padding-left: 0;
-		transition: $transNormal;
-	}//@media #{ $pcBreak }
-	@media #{ $smBreak }{
-		width: $smContentWid;
+		transition: variable.$transNormal;
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$smBreak }{
+		width: variable.$smContentWid;
 		padding-left: 0;
 		overflow: hidden;
-		transition: $transNormal;
-	}//@media #{ $pcBreak }
+		transition: variable.$transNormal;
+	}//@media #{ variable.$pcBreak }
 }

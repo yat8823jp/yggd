@@ -1,13 +1,16 @@
+@use "../define/variable";
+@use "../define/mixins";
+
 .wp-block-embed-speaker-deck {
 	width: 100%;
 	margin: 0;
 	padding: 20px 40px;
 	box-sizing: border-box;
-	@media #{ $pcBreak }{
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak } {
-	}//@media #{ $tbBreak }
-	@media #{ $smBreak }{
+	@media #{ variable.$pcBreak }{
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak } {
+	}//@media #{ variable.$tbBreak }
+	@media #{ variable.$smBreak }{
 		padding: 20px;
-	}//@media #{ $smBreak }
+	}//@media #{ variable.$smBreak }
 }

@@ -1,3 +1,6 @@
+@use "../define/variable";
+@use "../define/mixins";
+
 .c-side-by-side {
 	max-width: 100%;
 	padding: 40px 40px 20px;
@@ -12,11 +15,11 @@
 			margin-right: 0;
 		}
 	}
-	@media #{ $pcBreak }{
+	@media #{ variable.$pcBreak }{
 	}
-	@media #{ $tbBreak } {
+	@media #{ variable.$tbBreak } {
 		padding: 20px;
-	}//@media #{ $tbBreak }
-	@media #{ $smBreak }{
+	}//@media #{ variable.$tbBreak }
+	@media #{ variable.$smBreak }{
 	}
 }

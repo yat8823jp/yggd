@@ -1,5 +1,8 @@
+@use "../define/variable";
+@use "../define/mixins";
+
 .mod-title-line {
-	@include reset;
+	@include mixins.reset;
 	width: 100%;
 	padding: 55px 0;
 	background: url(../img/title_line_bg.jpg);
@@ -10,67 +13,67 @@
 		padding: 0;
 		background: none;
 		box-shadow: none;
-		@media #{ $pcBreak }{
-			transition: $transNormal;
-		}//@media #{ $pcBreak }
-		@media #{ $tbBreak }{
-			width: $tbContentWid;
-			transition: $transNormal;
-		}//@media #{ $pcBreak }
-		@media #{ $smBreak }{
-			width: $smContentWid;
-		}//@media #{ $pcBreak
+		@media #{ variable.$pcBreak }{
+			transition: variable.$transNormal;
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$tbBreak }{
+			width: variable.$tbContentWid;
+			transition: variable.$transNormal;
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$smBreak }{
+			width: variable.$smContentWid;
+		}//@media #{ variable.$pcBreak
 	}
 	.mod-container {
 		width: 600px;
-		@media #{ $pcBreak }{
-			transition: $transNormal;
-		}//@media #{ $pcBreak }
-		@media #{ $tbBreak }{
-			width: $tbContentWid;
+		@media #{ variable.$pcBreak }{
+			transition: variable.$transNormal;
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$tbBreak }{
+			width: variable.$tbContentWid;
 			max-width: 600px;
 			padding: 20px;
 			box-sizing: border-box;
-			transition: $transNormal;
-		}//@media #{ $pcBreak }
-		@media #{ $smBreak }{
-			width: $smContentWid;
+			transition: variable.$transNormal;
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$smBreak }{
+			width: variable.$smContentWid;
 			padding: 20px;
 			box-sizing: border-box;
-		}//@media #{ $pcBreak
+		}//@media #{ variable.$pcBreak
 	}
 }//.mod-title-line
 
 .mod-title-line-time {
 	font-size: 2.0rem;
 	color: #b7b7b7;
-		@media #{ $pcBreak }{
-		}//@media #{ $pcBreak }
-		@media #{ $tbBreak }{
+		@media #{ variable.$pcBreak }{
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$tbBreak }{
 			width: 180px;
 			margin: auto;
 			text-align: center;
 			display: block;
-		}//@media #{ $pcBreak }
-		@media #{ $smBreak }{
-		}//@media #{ $pcBreak
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$smBreak }{
+		}//@media #{ variable.$pcBreak
 }//.mod-title-line-time
 
 .mod-title-line-meta {
-	@include reset;
+	@include mixins.reset;
 	color: #b7b7b7;
 	font-size: 1.4rem;
 	text-align: right;
 	float: right;
-	@media #{ $pcBreak }{
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak }{
+	@media #{ variable.$pcBreak }{
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak }{
 		text-align: center;
 		margin-top: 5px;
 		float: none;
-	}//@media #{ $pcBreak }
-	@media #{ $smBreak }{
-	}//@media #{ $pcBreak }
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$smBreak }{
+	}//@media #{ variable.$pcBreak }
 	li { display: inline; }
 	dl { display: inline; }
 	dt { display: inline; }
@@ -89,7 +92,7 @@
 	text-align: center;
 	font-size: 2.4rem;
 	box-shadow: none;
-	transition: $transNormal;
+	transition: variable.$transNormal;
 	a {
 		border: 1px solid #fff;
 		padding: 30px;
@@ -98,12 +101,12 @@
 		display: block;
 		&:link, &:visited {
 			color: #fff;
-			@include opacity-bk( 0.5 );
+			@include mixins.opacity-bk( 0.5 );
 		}
 		&:hover {
 			color: #ccc;
 			background: #fff;
-			@include opacity-wh( 0.2 );
+			@include mixins.opacity-wh( 0.2 );
 		}
 	}
 }

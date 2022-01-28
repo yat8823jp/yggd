@@ -1,18 +1,21 @@
+@use "../define/variable";
+@use "../define/mixins";
+
 .metasns {
 	display: inline-block;
 	margin: 5px auto 6px 0;
-	@media #{ $pcBreak }{
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak }{
+	@media #{ variable.$pcBreak }{
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak }{
 		width: auto;
 		max-width: 550px;
-		transition: $transNormal;
-	}//@media #{ $pcBreak }
-	@media #{ $smBreak }{
+		transition: variable.$transNormal;
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$smBreak }{
 		// width: 300px;
 		// margin-left: 50px !important;
-		transition: $transNormal;
-	}//@media #{ $pcBreak
+		transition: variable.$transNormal;
+	}//@media #{ variable.$pcBreak
 	&-item {
 		a {
 			width: 80px;
@@ -39,31 +42,32 @@
 				text-align: right;
 				display: inline-block;
 				vertical-align: top;
+				word-wrap: normal;
 			}
 		}//&-set
 	}//&-item
 	&-hateb {
 		width: 15px;
 		height: 15px;
-		@media #{ $smBreak }{
+		@media #{ variable.$smBreak }{
 		}
 	}
 	&-tw {
 		width: 18px;
 		height: 14px;
-		@media #{ $smBreak }{
+		@media #{ variable.$smBreak }{
 		}
 	}
 	&-fb {
 		width: 14px;
 		height: 14px;
-		@media #{ $smBreak }{
+		@media #{ variable.$smBreak }{
 		}
 	}
 	&-pocket {
 		width: 14px;
 		height: 14px;
-		@media #{ $smBreak }{
+		@media #{ variable.$smBreak }{
 		}
 	}
 	// li {
@@ -96,8 +100,8 @@
 
 }//metasns
 .mod-content-share {
-	@include dropshadow;
-	@include reset;
+	@include mixins.dropshadow;
+	@include mixins.reset;
 	width: 100%;
 	height: 55px;
 	line-height: 48px;
@@ -117,31 +121,31 @@
 		}
 	}
 
-	@media #{ $pcBreak }{
-		transition: $transNormal;
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak }{
-		width: $tbContentWid;
-		transition: $transNormal;
-	}//@media #{ $pcBreak }
-	@media #{ $smBreak }{
-		width: $smContentWid;
+	@media #{ variable.$pcBreak }{
+		transition: variable.$transNormal;
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak }{
+		width: variable.$tbContentWid;
+		transition: variable.$transNormal;
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$smBreak }{
+		width: variable.$smContentWid;
 		min-height: 55px;
 		height: auto;
 		line-height: auto;
-		transition: $transNormal;
+		transition: variable.$transNormal;
 		ul {
 			// padding-top: 10px;
 		}
-	}//@media #{ $pcBreak
+	}//@media #{ variable.$pcBreak
 }//.mod-content-share
 
 .mod-content-share-end {
-	@media #{ $pcBreak }{
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak }{
-	}//@media #{ $pcBreak }
-	@media #{ $smBreak }{
+	@media #{ variable.$pcBreak }{
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak }{
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$smBreak }{
 		margin: auto;
-	}//@media #{ $pcBreak }
+	}//@media #{ variable.$pcBreak }
 }

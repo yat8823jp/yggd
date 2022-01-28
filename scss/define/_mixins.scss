@@ -1,3 +1,5 @@
+@use "./variable";
+
 @mixin beforeafter {
 	content: "";
 	display: block;

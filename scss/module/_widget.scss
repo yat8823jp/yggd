@@ -1,3 +1,6 @@
+@use "../define/variable";
+@use "../define/mixins";
+
 .mod-widget {
 	margin: 30px 0 30px 0;
 	background: url(../img/widget_bg.jpg);
@@ -5,23 +8,23 @@
 	img {
 		height: auto;
 	}
-	@media #{ $pcBreak }{
-		width: $pdSideWid;
+	@media #{ variable.$pcBreak }{
+		width: variable.$pdSideWid;
 		clear: both;
 		float: none;
 		img {
 			width: 25%;
 		}
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak }{
-		width: $tbSideWid;
-	}//@media #{ $pcBreak }
-	@media #{ $smBreak }{
-		width: $smSideWid;
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak }{
+		width: variable.$tbSideWid;
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$smBreak }{
+		width: variable.$smSideWid;
 		img {
 			width: 100%;
 		}
-	}//@media #{ $pcBreak }
+	}//@media #{ variable.$pcBreak }
 	dt, dd, img {
 		margin: 0;
 		padding: 0;
@@ -31,42 +34,42 @@
 		font-size: 2.4rem;
 		font-weight: normal;
 		text-align: center;
-		font-family: $hwebfont;
+		font-family: variable.$hwebfont;
 		background: url(../img/widget_h_line.png) repeat-x bottom;
 		overflow: hidden;
-		box-siziing: border-box;
-		@media #{ $pcBreak }{
-		}//@media #{ $pcBreak }
-		@media #{ $tbBreak }{
-			width: $tbSideWid;
+		box-sizing: border-box;
+		@media #{ variable.$pcBreak }{
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$tbBreak }{
+			width: variable.$tbSideWid;
 			float: none;
-		}//@media #{ $pcBreak }
-		@media #{ $smBreak }{
-			width: $smSideWid;
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$smBreak }{
+			width: variable.$smSideWid;
 			float: none;
-		}//@media #{ $pcBreak }
+		}//@media #{ variable.$pcBreak }
 	}//.mod-widget-title
 	.mod-widget-body {
 		padding: 25px;
 		font-size: 1.4rem;
 		div {
 			margin-bottom: 0;
-			@media #{ $pcBreak }{
-			}//@media #{ $pcBreak }
-			@media #{ $tbBreak }{
-			}//@media #{ $pcBreak }
-			@media #{ $smBreak }{
-			}//@media #{ $pcBreak }
+			@media #{ variable.$pcBreak }{
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$tbBreak }{
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$smBreak }{
+			}//@media #{ variable.$pcBreak }
 		}
 		img {
 			margin-bottom: 5px;
-			@media #{ $pcBreak }{
-			}//@media #{ $pcBreak }
-			@media #{ $tbBreak }{
-			}//@media #{ $pcBreak }
-			@media #{ $smBreak }{
+			@media #{ variable.$pcBreak }{
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$tbBreak }{
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$smBreak }{
 				width: 160px;
-			}//@media #{ $pcBreak }
+			}//@media #{ variable.$pcBreak }
 		}
 		a {
 			margin: auto;
@@ -75,14 +78,14 @@
 		p {
 			margin: 0 0 20px 0;
 			text-align: left;
-			@media #{ $pcBreak }{
+			@media #{ variable.$pcBreak }{
 				text-align: center;
-			}//@media #{ $pcBreak }
-			@media #{ $tbBreak }{
-			}//@media #{ $pcBreak }
-			@media #{ $smBreak }{
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$tbBreak }{
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$smBreak }{
 				text-align: left;
-			}//@media #{ $pcBreak }
+			}//@media #{ variable.$pcBreak }
 			&:last-child {
 				margin-bottom: 0;
 			}
@@ -103,7 +106,7 @@
 			font-weight: bold;
 			display: block;
 		}
-		@media #{ $pcBreak }{
+		@media #{ variable.$pcBreak }{
 			ul {
 				margin-left: -10px;
 				li {
@@ -114,7 +117,7 @@
 						margin-bottom: 20px;
 						box-sizing: border-box;
 						display: block;
-						@include weget-bt;
+						@include mixins.weget-bt;
 					}
 				}//li
 				.popular {
@@ -139,14 +142,14 @@
 			display: inline;
 			}
 			&::after {
-				@include beforeafter;
+				@include mixins.beforeafter;
 				clear: both;
 			}
-		}//@media #{ $pdBreak }
-		@media #{ $tbBreak }{
-		}//@media #{ $pcBreak }
-		@media #{ $smBreak }{
-		}//@media #{ $pcBreak }
+		}//@media #{ variable.$pdBreak }
+		@media #{ variable.$tbBreak }{
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$smBreak }{
+		}//@media #{ variable.$pcBreak }
 	}//.mod-widget-body
 	.mod-widget-imgbox {
 		li {

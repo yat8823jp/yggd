@@ -1,3 +1,6 @@
+@use "../define/variable";
+@use "../define/mixins";
+
 .wp-block-video {
 	video {
 		padding: 20px;

@@ -1,24 +1,27 @@
+@use "../define/variable";
+@use "../define/mixins";
+
 .lout-main-contents {
-	width: $pcContentWid;
+	width: variable.$pcContentWid;
 	margin-bottom: 60px;
 	position: relative;
 	z-index: 2;
 	box-sizing: border-box;
 	float: left;
 
-	@media #{ $pcBreak }{
-		width: $pcContentWid;
+	@media #{ variable.$pcBreak }{
+		width: variable.$pcContentWid;
 		margin: auto;
 		float: none;
-		transition: $transNormal;
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak }{
-		width: $tbContentWid;
-		transition: $transNormal;
-	}//@media #{ $pcBreak }
-	@media #{ $smBreak }{
-		width: $smContentWid;
-	}//@media #{ $pcBreak }
+		transition: variable.$transNormal;
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak }{
+		width: variable.$tbContentWid;
+		transition: variable.$transNormal;
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$smBreak }{
+		width: variable.$smContentWid;
+	}//@media #{ variable.$pcBreak }
 
 	.lout-main-contents-postdata {
 		padding-top: 30px;
@@ -30,36 +33,36 @@
 			width: 100%;
 			height: 100%;
 			display: block;
-			@media #{ $pcBreak }{
-			}//@media #{ $pcBreak }
-			@media #{ $tbBreak } {
+			@media #{ variable.$pcBreak }{
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$tbBreak } {
 			}
-			@media #{ $smBreak }{
+			@media #{ variable.$smBreak }{
 				height: auto;
-			}//@media #{ $pcBreak }
+			}//@media #{ variable.$pcBreak }
 		}
 
 		.no-eyecatch {
 			min-width: 100%;
 			margin-bottom: 30px;
-			@media #{ $pcBreak }{
-			}//@media #{ $pcBreak }
-			@media #{ $tbBreak } {
+			@media #{ variable.$pcBreak }{
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$tbBreak } {
 			}
-			@media #{ $smBreak }{
-			}//@media #{ $pcBreak }
+			@media #{ variable.$smBreak }{
+			}//@media #{ variable.$pcBreak }
 		}
 
 		div {
 			max-width: 900px;
 			&.wp-block-media-text {
 				margin: 0 20px 20px;
-				@media #{ $pcBreak }{
+				@media #{ variable.$pcBreak }{
 				}
 				p {
 					margin: 0 20px;
 				}
-				@media #{ $pcBreak }{
+				@media #{ variable.$pcBreak }{
 				}
 				.wp-block-media-text__media {
 					img {
@@ -78,13 +81,13 @@
 
 		img {
 			// max-width: 860px;
-			@media #{ $pcBreak }{
-			}//@media #{ $pcBreak }
-			@media #{ $tbBreak } {
+			@media #{ variable.$pcBreak }{
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$tbBreak } {
 			}
-			@media #{ $smBreak }{
+			@media #{ variable.$smBreak }{
 				height: auto;
-			}//@media #{ $pcBreak }
+			}//@media #{ variable.$pcBreak }
 		}
 
 		.lout-content-ad {
@@ -96,13 +99,13 @@
 			}
 			.lout-content-ad-body {
 				padding-bottom: 30px;
-				@media #{ $pcBreak }{
-				}//@media #{ $pcBreak }
-				@media #{ $tbBreak }{
-				}//@media #{ $pcBreak }
-				@media #{ $smBreak }{
+				@media #{ variable.$pcBreak }{
+				}//@media #{ variable.$pcBreak }
+				@media #{ variable.$tbBreak }{
+				}//@media #{ variable.$pcBreak }
+				@media #{ variable.$smBreak }{
 					width: 50%;
-				}//@media #{ $pcBreak }
+				}//@media #{ variable.$pcBreak }
 				li {
 					// width: 40%;
 					margin: 0 15px 15px 0;
@@ -122,21 +125,21 @@
 						height: 100%;
 						margin: 0;
 						padding: 0;
-						@media #{ $pcBreak }{
-						}//@media #{ $pcBreak }
-						@media #{ $tbBreak }{
-						}//@media #{ $pcBreak }
-						@media #{ $smBreak }{
+						@media #{ variable.$pcBreak }{
+						}//@media #{ variable.$pcBreak }
+						@media #{ variable.$tbBreak }{
+						}//@media #{ variable.$pcBreak }
+						@media #{ variable.$smBreak }{
 							// margin-left: -25px;
-						}//@media #{ $pcBreak }
+						}//@media #{ variable.$pcBreak }
 					}
-					@media #{ $pcBreak }{
-					}//@media #{ $pcBreak }
-					@media #{ $tbBreak }{
-					}//@media #{ $pcBreak }
-					@media #{ $smBreak }{
+					@media #{ variable.$pcBreak }{
+					}//@media #{ variable.$pcBreak }
+					@media #{ variable.$tbBreak }{
+					}//@media #{ variable.$pcBreak }
+					@media #{ variable.$smBreak }{
 						width: 50%;
-					}//@media #{ $pcBreak }
+					}//@media #{ variable.$pcBreak }
 				}
 			}
 		}//lout-content-ad
@@ -145,12 +148,12 @@
 			// height: 20px;
 			ul {
 				padding: 0;
-				@media #{ $pcBreak }{
-				}//@media #{ $pcBreak }
-				@media #{ $tbBreak }{
-				}//@media #{ $pcBreak }
-				@media #{ $smBreak }{
-				}//@media #{ $pcBreak }
+				@media #{ variable.$pcBreak }{
+				}//@media #{ variable.$pcBreak }
+				@media #{ variable.$tbBreak }{
+				}//@media #{ variable.$pcBreak }
+				@media #{ variable.$smBreak }{
+				}//@media #{ variable.$pcBreak }
 			}
 		}//.mod-content-share
 
@@ -175,7 +178,7 @@
 
 .lout-main-contents-postdata-sub {
 	margin: 90px 0 60px;
-	@include dropshadow;
+	@include mixins.dropshadow;
 	.mod-content-sub-title {
 		width: 197px;
 		height: 63px;
@@ -186,19 +189,19 @@
 		font-size: 2.0rem;
 		background: url(../img/content_sub_h.png) no-repeat;
 		box-shadow: none;
-		font-family: $hwebfont;
+		font-family: variable.$hwebfont;
 		font-display: swap;
 		position: absolute;
-		@media #{ $pcBreak }{
-		}//@media #{ $pcBreak }
-		@media #{ $tbBreak }{
-		}//@media #{ $pcBreak }
-		@media #{ $smBreak }{
+		@media #{ variable.$pcBreak }{
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$tbBreak }{
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$smBreak }{
 			// width: (197/2)+px;
 			// padding: 20px 0 0 50px;
 			// background-size: contain;
 			display: none;
-		}//@media #{ $pcBreak }
+		}//@media #{ variable.$pcBreak }
 	}//h2
 	ul{
 		margin: 0 0 30px 10px;
@@ -212,28 +215,28 @@
 			img {
 			}
 		}//li
-		@media #{ $pcBreak }{
-		}//@media #{ $pcBreak }
-		@media #{ $tbBreak }{
+		@media #{ variable.$pcBreak }{
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$tbBreak }{
 			li {
 				margin: 0;
 			}
-		}//@media #{ $pcBreak }
-		@media #{ $smBreak }{
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$smBreak }{
 			margin: 0 0 0 -20px;
 			li {
 				img {
 					// width: 80%;
 				}
 			}
-		}//@media #{ $pcBreak }
+		}//@media #{ variable.$pcBreak }
 
 	}//ul
 }//.lout-main-contents-postdata-sub
 
 
 .lout-archive-contents {
-	width: $pcContentWid;
+	width: variable.$pcContentWid;
 	margin-bottom: 60px;
 	position: relative;
 	z-index: 2;
@@ -249,19 +252,19 @@
 		// max-width: 860px;
 	}
 
-	@media #{ $pcBreak }{
-		width: $pcContentWid;
+	@media #{ variable.$pcBreak }{
+		width: variable.$pcContentWid;
 		margin: auto;
 		float: none;
-		transition: $transNormal;
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak }{
-		width: $tbContentWid;
-		transition: $transNormal;
-	}//@media #{ $pcBreak }
-	@media #{ $smBreak }{
-		width: $smContentWid;
-	}//@media #{ $pcBreak }
+		transition: variable.$transNormal;
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak }{
+		width: variable.$tbContentWid;
+		transition: variable.$transNormal;
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$smBreak }{
+		width: variable.$smContentWid;
+	}//@media #{ variable.$pcBreak }
 
 	.eyecatch {
 		width: 100%;
@@ -274,12 +277,12 @@
 		min-width: 100%;
 		margin-bottom: 30px;
 		position: absolute;
-		@media #{ $pcBreak }{
-		}//@media #{ $pcBreak }
-		@media #{ $tbBreak } {
+		@media #{ variable.$pcBreak }{
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$tbBreak } {
 		}
-		@media #{ $smBreak }{
-		}//@media #{ $pcBreak }
+		@media #{ variable.$smBreak }{
+		}//@media #{ variable.$pcBreak }
 	}
 }//.lout-archive-contents
 
@@ -296,27 +299,27 @@
 		height: 100%;
 	}
 
-	@media #{ $pcBreak }{
+	@media #{ variable.$pcBreak }{
 		margin: auto auto 40px;
 		float: none;
-		transition: $transNormal;
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak }{
-		transition: $transNormal;
-	}//@media #{ $pcBreak }
-	@media #{ $smBreak }{
+		transition: variable.$transNormal;
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak }{
+		transition: variable.$transNormal;
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$smBreak }{
 		width: 80%;
 		margin: 40px auto;
-	}//@media #{ $pcBreak }
+	}//@media #{ variable.$pcBreak }
 }
 
 .amazon-box {
 	margin: 0 40px 30px;
-	@media #{ $pcBreak }{
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak } {
+	@media #{ variable.$pcBreak }{
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak } {
 	}
-	@media #{ $smBreak }{
+	@media #{ variable.$smBreak }{
 		margin: 0 20px 15px;
 	}
 }

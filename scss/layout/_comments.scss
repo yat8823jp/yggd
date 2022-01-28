@@ -1,3 +1,6 @@
+@use "../define/variable";
+@use "../define/mixins";
+
 .lout-comment {
 	margin-top: -130px;
 	position: relative;
@@ -24,7 +27,7 @@
 			overflow: hidden;
 			float: left;
 			&::after {
-				@include clearfix;
+				@include mixins.clearfix;
 			}
 			dt {
 				margin: 0;
@@ -50,34 +53,34 @@
 					font-size: 1.2rem;
 				}
 			}//dd
-			@media #{ $pcBreak }{
-				transition: $transNormal;
-			}//@media #{ $pcBreak }
-			@media #{ $tbBreak }{
-				transition: $transNormal;
-			}//@media #{ $pcBreak }
-			@media #{ $smBreak }{
+			@media #{ variable.$pcBreak }{
+				transition: variable.$transNormal;
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$tbBreak }{
+				transition: variable.$transNormal;
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$smBreak }{
 				width: 100%;
 				margin-bottom: 10px;
 				float: none;
-				transition: $transNormal;
-			}//@media #{ $pcBreak }
+				transition: variable.$transNormal;
+			}//@media #{ variable.$pcBreak }
 		}//.mod-comment-auth
 		.mod-comment-text {
 			margin: 0 0 10px 0;
 			min-height: 80px;
 			padding-left: 225px;
 			line-height: 1.6;
-			@media #{ $pcBreak }{
-				transition: $transNormal;
-			}//@media #{ $pcBreak }
-			@media #{ $tbBreak }{
-				transition: $transNormal;
-			}//@media #{ $pcBreak }
-			@media #{ $smBreak }{
+			@media #{ variable.$pcBreak }{
+				transition: variable.$transNormal;
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$tbBreak }{
+				transition: variable.$transNormal;
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$smBreak }{
 				padding-left: 0;
-				transition: $transNormal;
-			}//@media #{ $pcBreak }
+				transition: variable.$transNormal;
+			}//@media #{ variable.$pcBreak }
 		}//mod-comment-text
 		.mod-comment-awaiting {
 			color: #817a6f;
@@ -93,13 +96,13 @@
 		font-size: 1.6rem;
 		text-align: right;
 		&::after {
-			@include beforeafter;
+			@include mixins.beforeafter;
 			clear: both;
 		}
 		.comment-reply-link {
 			padding: 8px;
 			text-align: right;
-			@include weget-bt;
+			@include mixins.weget-bt;
 			display: block;
 			float: right;
 		}
@@ -137,13 +140,13 @@
 			border-radius: 4px;
 			border: 1px solid #b9b9b9;
 			box-sizing: border-box;
-			@media #{ $pcBreak }{
-			}//@media #{ $pcBreak }
-			@media #{ $tbBreak }{
-			}//@media #{ $pcBreak }
-			@media #{ $smBreak }{
+			@media #{ variable.$pcBreak }{
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$tbBreak }{
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$smBreak }{
 				width: 80%;
-			}//@media #{ $pcBreak }
+			}//@media #{ variable.$pcBreak }
 		}//input[type="submit"]
 		.wpcf7-mail-sent-ok {
 			padding: 10px;

@@ -1,3 +1,6 @@
+@use "./variable";
+@use "./mixins";
+
 //-------------------------------
 //--scss file
 //-------------------------------
@@ -28,7 +31,7 @@ h2 {
 	color: #e11f6a;
 	text-align: center;
 	background: url(../img/postdata_h2_bg.jpg);
-	@include dropshadow;
+	@include mixins.dropshadow;
 }
 h3 {
 	font-size: 2.0rem;
@@ -39,13 +42,13 @@ h3 {
 	text-align: center;
 	color: #e11f6a;
 	border-bottom: 1px solid #e11f6a;
-	@media #{ $pcBreak }{
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak } {
-	}//@media #{ $tbBreak }
-	@media #{ $smBreak }{
+	@media #{ variable.$pcBreak }{
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak } {
+	}//@media #{ variable.$tbBreak }
+	@media #{ variable.$smBreak }{
 		margin: 40px 20px 30px;
-	}//@media #{ $smBreak }
+	}//@media #{ variable.$smBreak }
 }
 
 h4, h5, h6 {
@@ -55,13 +58,13 @@ h4, h5, h6 {
 	font-weight: bold;
 	text-align: center;
 	color: #e11f6a;
-	@media #{ $pcBreak }{
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak } {
-	}//@media #{ $tbBreak }
-	@media #{ $smBreak }{
+	@media #{ variable.$pcBreak }{
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak } {
+	}//@media #{ variable.$tbBreak }
+	@media #{ variable.$smBreak }{
 		margin: 40px 20px 30px;
-	}//@media #{ $smBreak }
+	}//@media #{ variable.$smBreak }
 }
 
 div {
@@ -72,14 +75,14 @@ p {
 	font-size: 1.8rem;
 	line-height: 2.0;
 	margin: 0 80px 25px;
-	@media #{ $pcBreak }{
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak } {
+	@media #{ variable.$pcBreak }{
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak } {
 		margin: 0 40px 25px;
-	}//@media #{ $tbBreak }
-	@media #{ $smBreak }{
+	}//@media #{ variable.$tbBreak }
+	@media #{ variable.$smBreak }{
 		margin: 0 20px 30px;
-	}//@media #{ $smBreak }
+	}//@media #{ variable.$smBreak }
 }
 
 blockquote{
@@ -92,13 +95,13 @@ blockquote{
 	font-style: italic;
 	box-sizing: border-box;
 	position: relative;
-	@media #{ $pcBreak }{
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak } {
-	}//@media #{ $tbBreak }
-	@media #{ $smBreak }{
+	@media #{ variable.$pcBreak }{
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak } {
+	}//@media #{ variable.$tbBreak }
+	@media #{ variable.$smBreak }{
 		margin: 0 10px 25px;
-	}//@media #{ $smBreak }
+	}//@media #{ variable.$smBreak }
 	&::before, &::after{
 		font-size: 6.0rem;
 		opacity: 0.5;
@@ -128,14 +131,14 @@ table {
 	background: url(../img/table_bg.jpg);
 	box-sizing: border-box;
 	font-size: 1.8rem;
-	@include dropshadow;
-	@media #{ $pcBreak }{
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak } {
-	}//@media #{ $tbBreak }
-	@media #{ $smBreak }{
+	@include mixins.dropshadow;
+	@media #{ variable.$pcBreak }{
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak } {
+	}//@media #{ variable.$tbBreak }
+	@media #{ variable.$smBreak }{
 		margin: 0 20px 20px;
-	}//@media #{ $smBreak }
+	}//@media #{ variable.$smBreak }
 	tr {
 		th, td {
 			padding: 7px 12px;
@@ -162,11 +165,11 @@ table {
 			}
 		}
 	}//tr
-	@media #{ $pcBreak }{
-	}//@media #{ $pdBreak }
-	@media #{ $tbBreak }{
-	}//@media #{ $pcBreak }
-	@media #{ $smBreak }{
+	@media #{ variable.$pcBreak }{
+	}//@media #{ variable.$pdBreak }
+	@media #{ variable.$tbBreak }{
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$smBreak }{
 		width: 95%;
 		margin: 0 auto 40px;
 		box-sizing: border-box;
@@ -206,19 +209,19 @@ table {
 				}
 			}//td
 		}///tr
-	}//@media #{ $pcBreak }
+	}//@media #{ variable.$pcBreak }
 }//table
 
 img {
 	max-width: 100%;
 	height: 100%;
-	@media #{ $pcBreak }{
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak } {
+	@media #{ variable.$pcBreak }{
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak } {
 		max-width: 320px;
-	}//@media #{ $tbBreak }
-	@media #{ $smBreak }{
-	}//@media #{ $smBreak }
+	}//@media #{ variable.$tbBreak }
+	@media #{ variable.$smBreak }{
+	}//@media #{ variable.$smBreak }
 }
 
 ul, ol {
@@ -227,17 +230,17 @@ ul, ol {
 	font-size: 1.6rem;
 	line-height: 1.5;
 	&:last-child { padding-bottom: 0; }
-	@media #{ $pcBreak }{
-		transition: $transNormal;
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak }{
+	@media #{ variable.$pcBreak }{
+		transition: variable.$transNormal;
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak }{
 		margin: 0 40px 15px 60px;
-		transition: $transNormal;
-	}//@media #{ $pcBreak }
-	@media #{ $smBreak }{
+		transition: variable.$transNormal;
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$smBreak }{
 		margin: 0 20px 20px 20px;
-		transition: $transNormal;
-	}//@media #{ $pcBreak }
+		transition: variable.$transNormal;
+	}//@media #{ variable.$pcBreak }
 	li {
 		padding-top: 10.5px;
 	}
@@ -253,13 +256,13 @@ dl {
 	line-height: 1.7;
 	dt { font-weight: bold; margin-bottom: 10px; }
 	dd { margin-left: 20px; }
-	@media #{ $pcBreak }{
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak } {
-	}//@media #{ $tbBreak }
-	@media #{ $smBreak }{
+	@media #{ variable.$pcBreak }{
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak } {
+	}//@media #{ variable.$tbBreak }
+	@media #{ variable.$smBreak }{
 		margin: 0 20px 20px;
-	}//@media #{ $smBreak }
+	}//@media #{ variable.$smBreak }
 }
 
 pre {
@@ -274,10 +277,10 @@ pre {
 	margin-bottom: 20px;
 	font-size: 1.6rem;
 	line-height: 1.8;
-	@media #{ $tbBreak } {
+	@media #{ variable.$tbBreak } {
 		padding: 40px;
-	}//@media #{ $tbBreak }
-	@media #{ $smBreak }{
+	}//@media #{ variable.$tbBreak }
+	@media #{ variable.$smBreak }{
 		padding: 20px;
 	}
 }
@@ -315,21 +318,21 @@ a {
 }
 .wp-block-video {
 	padding: 0 40px;
-	@media #{ $pcBreak }{
+	@media #{ variable.$pcBreak }{
 		padding: 0 20px;
 	}
-	@media #{ $tbBreak } {
+	@media #{ variable.$tbBreak } {
 	}
-	@media #{ $smBreak }{
+	@media #{ variable.$smBreak }{
 		padding: 0;
 	}
 	video {
 		padding: 0;
-		@media #{ $pcBreak }{
+		@media #{ variable.$pcBreak }{
 		}
-		@media #{ $tbBreak } {
+		@media #{ variable.$tbBreak } {
 		}
-		@media #{ $smBreak }{
+		@media #{ variable.$smBreak }{
 		}
 	}
 }

@@ -1,3 +1,6 @@
+@use "../define/variable";
+@use "../define/mixins";
+
 .alignright {
 	display: block;
 	float: right;
@@ -20,7 +23,7 @@
 }
 
 .clearfix {
-	@include clearfix;
+	@include mixins.clearfix;
 }
 //
 .post-categories {
@@ -65,16 +68,16 @@
 img {
 	margin: 10px auto auto auto;
 	display: block;
-	@media #{ $pcBreak }{
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak } {
-	}//@media #{ $tbBreak }
-	@media #{ $smBreak }{
+	@media #{ variable.$pcBreak }{
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak } {
+	}//@media #{ variable.$tbBreak }
+	@media #{ variable.$smBreak }{
 		width: 100%;
 		margin: auto;
 		display: block;
 		// margin: 0;
-	}//@media #{ $smBreak }
+	}//@media #{ variable.$smBreak }
 }
 
 div {
@@ -111,13 +114,13 @@ div {
 	padding: 30px 0;
 	text-align: left;
 	background: #f3f3f3;
-	@media #{ $pcBreak }{
+	@media #{ variable.$pcBreak }{
 		text-align: left;
 	}
-	@media #{ $tbBreak } {
+	@media #{ variable.$tbBreak } {
 		text-align: left;
 	}
-	@media #{ $smBreak }{
+	@media #{ variable.$smBreak }{
 		margin: 0 20px 30px;
 		text-align: left;
 	}
@@ -128,13 +131,13 @@ div {
 		&:last-child {
 			padding-bottom: 0;
 		}
-		@media #{ $pcBreak }{
+		@media #{ variable.$pcBreak }{
 			text-align: left;
-		}//@media #{ $pcBreak }
-		@media #{ $tbBreak } {
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$tbBreak } {
 			text-align: left;
-		}//@media #{ $tbBreak }
-		@media #{ $smBreak }{
+		}//@media #{ variable.$tbBreak }
+		@media #{ variable.$smBreak }{
 			text-align: left;
 		}
 	}
@@ -147,11 +150,11 @@ table {
 	td {
 		line-height: 1.6;
 	}
-	@media #{ $pcBreak }{
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak } {
+	@media #{ variable.$pcBreak }{
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak } {
 	}
-	@media #{ $smBreak }{
+	@media #{ variable.$smBreak }{
 		width: calc( 100% - 40px );
 		word-wrap: break-word;
 		overflow-wrap : break-word;
@@ -171,15 +174,15 @@ table {
 			word-break: break-all;
 			// display : block;
 		}
-	}//@media #{ $pcBreak }
+	}//@media #{ variable.$pcBreak }
 }
 
 .syntaxhighlighter {
-	@media #{ $pcBreak }{
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak } {
+	@media #{ variable.$pcBreak }{
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak } {
 	}
-	@media #{ $smBreak }{
+	@media #{ variable.$smBreak }{
 		margin: auto 40px !important;
 		padding: 10px 0;
 		caption {
@@ -205,7 +208,7 @@ table {
 	margin: auto;
 }
 .crayon-num {
-	@media #{ $smBreak }{
+	@media #{ variable.$smBreak }{
 		display: none;
 	}
 }

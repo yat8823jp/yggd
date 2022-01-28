@@ -1,6 +1,10 @@
+@use "../define/variable";
+@use "../define/mixins";
+@use "sass:math";
+
 .api-kyash {
 	margin: 80px auto 120px;
-	@media #{ $smBreak }{
+	@media #{ variable.$smBreak }{
 		margin: 40px auto 60px;
 	}
 	p {
@@ -9,14 +13,14 @@
 		font-size: 1.4rem;
 	}
 	a {
-		width: (500/2)+px;
-		height: (150/2)+px;
+		width: math.div(500, 2)+px;
+		height: math.div(150, 2)+px;
 		margin: auto;
 		display: block;
 		img {
 			max-width: inherit;
-			width: (500/2)+px;
-			height: (150/2)+px;
+			width: math.div(500, 2)+px;
+			height: math.div(150, 2)+px;
 			filter: drop-shadow( 0 3px 3px rgba(0, 0, 0, 0.3 ) );
 		}
 		&:hover {

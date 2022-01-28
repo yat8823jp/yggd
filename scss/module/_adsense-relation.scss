@@ -1,3 +1,6 @@
+@use "../define/variable";
+@use "../define/mixins";
+
 .mod-adsense-relation {
 	&__inner {
 		margin-left: 0;

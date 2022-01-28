@@ -1,3 +1,6 @@
+@use "../define/variable";
+@use "../define/mixins";
+
 .mod-archive-postdata {
 	margin-bottom: 120px;
 	padding-top: 30px;
@@ -24,12 +27,12 @@
 			object-fit: cover;
 			opacity: 0.2;
 			z-index: 2;
-			@media #{ $pcBreak }{
-			}//@media #{ $pcBreak }
-			@media #{ $tbBreak } {
+			@media #{ variable.$pcBreak }{
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$tbBreak } {
 			}
-			@media #{ $smBreak }{
-			}//@media #{ $pcBreak }
+			@media #{ variable.$smBreak }{
+			}//@media #{ variable.$pcBreak }
 		}//.eyecatch
 
 		.mod-container {
@@ -65,8 +68,8 @@
 			display: block;
 			float: right;
 			a {
-				&:link, &:visited { color: #f7297b; margin-right: 10px; transition: $transNormal; }
-				&:hover { color: #2e639f; margin-right: 0; transition: $transNormal; }
+				&:link, &:visited { color: #f7297b; margin-right: 10px; transition: variable.$transNormal; }
+				&:hover { color: #2e639f; margin-right: 0; transition: variable.$transNormal; }
 			}
 		}//.mod-next-bt
 		.eyecatch {

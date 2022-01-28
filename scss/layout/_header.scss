@@ -1,3 +1,6 @@
+@use "../define/variable";
+@use "../define/mixins";
+
 .lout-header {
 	margin: 0 auto;
 	text-align: center;
@@ -8,21 +11,21 @@
 		padding: 30px 0;
 		background: #fff;
 		background-color: rgba(255,255,255,0.50);
-		@media #{ $pcBreak }{
-			width: $pcContentWid;
-			transition: $transNormal;
+		@media #{ variable.$pcBreak }{
+			width: variable.$pcContentWid;
+			transition: variable.$transNormal;
 			margin: auto;
-		}//@media #{ $pcBreak }
-		@media #{ $tbBreak }{
-			width: $tbContentWid;
-			transition: $transNormal;
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$tbBreak }{
+			width: variable.$tbContentWid;
+			transition: variable.$transNormal;
 			margin: 0;
-		}//@media #{ $pcBreak }
-		@media #{ $smBreak }{
-			width: $smMainWid;
-			transition: $transNormal;
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$smBreak }{
+			width: variable.$smMainWid;
+			transition: variable.$transNormal;
 			margin: 0;
-		}//@media #{ $pcBreak }
+		}//@media #{ variable.$pcBreak }
 	}
 	&::before,
 	&::after {
@@ -30,45 +33,45 @@
 		height: 299px;
 		position: absolute;
 		img { overflow: hidden; }
-		@include beforeafter;
+		@include mixins.beforeafter;
 	}
 	&::before {
 		top: 0;
 		left: 0;
 		background: url(../img/common/head_deco_left.png) no-repeat;
 		overflow: hidden;
-		transition: $transNormal;
-		@media #{ $pcBreak }{
-			transition: $transNormal;
+		transition: variable.$transNormal;
+		@media #{ variable.$pcBreak }{
+			transition: variable.$transNormal;
 			left: -300px;
-		}//@media #{ $pcBreak }
-		@media #{ $tbBreak }{
-			transition: $transNormal;
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$tbBreak }{
+			transition: variable.$transNormal;
 			left: -400px;
-		}//@media #{ $pcBreak }
-		@media #{ $smBreak }{
-			transition: $transNormal;
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$smBreak }{
+			transition: variable.$transNormal;
 			left: -480px;
-		}//@media #{ $pcBreak }
+		}//@media #{ variable.$pcBreak }
 	}//&::before
 	&::after {
 		top: 0;
 		right: 0;
 		background: url(../img/common/head_deco_right.png) no-repeat;
 		overflow: hidden;
-		transition: $transNormal;
-		@media #{ $pcBreak }{
-			transition: $transNormal;
+		transition: variable.$transNormal;
+		@media #{ variable.$pcBreak }{
+			transition: variable.$transNormal;
 			right: -300px;
-		}//@media #{ $pcBreak }
-		@media #{ $tbBreak }{
-			transition: $transNormal;
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$tbBreak }{
+			transition: variable.$transNormal;
 			right: -400px;
-		}//@media #{ $pcBreak }
-		@media #{ $smBreak }{
-			transition: $transNormal;
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$smBreak }{
+			transition: variable.$transNormal;
 			right: -480px;
-		}//@media #{ $pcBreak }
+		}//@media #{ variable.$pcBreak }
 	}//&::after
 	.mod-sitelogo {
 		margin: 40px auto 30px;
@@ -94,7 +97,7 @@
 	}//..mod-sitelogo
 	.mod-site-search {
 		font-size: 2.6rem;
-		font-family: $hwebfont;
+		font-family: variable.$hwebfont;
 		position: relative;
 		label {
 			top: 5px;
@@ -106,37 +109,37 @@
 		left: -700px;
 		font-size: 1.6rem;
 		position: absolute;
-		@media #{ $pcBreak }{
+		@media #{ variable.$pcBreak }{
 			width: 270px;
 			height: 55px;
 			background: url(../img/common/head_side_text_pc.png) no-repeat;
 			left: 10%;
 			img { display: none; }
-		}//@media #{ $pcBreak }
-		@media #{ $tbBreak }{
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$tbBreak }{
 			width: 190px;
 			height: 121px;
 			background: url(../img/common/head_side_text_tb.png) no-repeat;
 			left: 5%;
 			img { display: none; }
-		}//@media #{ $tbBreak }
-		@media #{ $smBreak }{
+		}//@media #{ variable.$tbBreak }
+		@media #{ variable.$smBreak }{
 			width: 67px;
 			height: 55px;
 			top: 94px;
 			left: 7%;
 			background: url(../img/common/head_side_text_sm.png) no-repeat;
 			img { display: none; }
-		}//@media #{ $smBreak }
+		}//@media #{ variable.$smBreak }
 	}
 	.mod-site-search-inputarea {
 		width: 200px;
 		margin-top: -5px;
 		padding: 5px;
-		@media #{ $tbBreak }{
+		@media #{ variable.$tbBreak }{
 			width: 180px;
 		}
-		@media #{ $smBreak }{
+		@media #{ variable.$smBreak }{
 			width: auto;
 		}
 	}

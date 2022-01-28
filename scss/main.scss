@@ -3,49 +3,49 @@
 /*-----------------------------------*/
 /* Define */
 /*-----------------------------------*/
-@import "define/base";
-@import "define/mixins";
-@import "define/variable";
-@import "define/default";
-@import "define/font";
+@forward "define/base";
+@forward "define/mixins";
+@forward "define/variable";
+@forward "define/default";
+@forward "define/font";
 
 /*-----------------------------------*/
 /* Layout */
 /*-----------------------------------*/
-@import "layout/main";
-@import "layout/contents";
-@import "layout/header";
-@import "layout/footer";
-@import "layout/navigation";
-@import "layout/sidebar";
-@import "layout/related";
-@import "layout/comments";
+@forward "layout/main";
+@forward "layout/contents";
+@forward "layout/header";
+@forward "layout/footer";
+@forward "layout/navigation";
+@forward "layout/sidebar";
+@forward "layout/related";
+@forward "layout/comments";
 
 /*-----------------------------------*/
 /* Module */
 /*-----------------------------------*/
-@import "module/button";
-@import "module/component";
-@import "module/parts";
-@import "module/top";
-@import "module/news";
-@import "module/links";
-@import "module/share";
-@import "module/wordpress";
-@import "module/maincontent-sub";
-@import "module/widget";
-@import "module/archive";
-@import "module/title";
-@import "module/form";
-@import "module/webfont";
-@import "module/fontbox";
-@import "module/wp-block-gallery";
-@import "module/wp-block-video";
-@import "module/speakerdeck";
-@import "module/related";
-@import "module/adsense-relation";
+@forward "module/button";
+@forward "module/component";
+@forward "module/parts";
+@forward "module/top";
+@forward "module/news";
+@forward "module/links";
+@forward "module/share";
+@forward "module/wordpress";
+@forward "module/maincontent-sub";
+@forward "module/widget";
+@forward "module/archive";
+@forward "module/title";
+@forward "module/form";
+@forward "module/webfont";
+@forward "module/fontbox";
+@forward "module/wp-block-gallery";
+@forward "module/wp-block-video";
+@forward "module/speakerdeck";
+@forward "module/related";
+@forward "module/adsense-relation";
 
 /*-----------------------------------*/
 /* State */
 /*-----------------------------------*/
-@import "state/state";
+@forward "state/state";

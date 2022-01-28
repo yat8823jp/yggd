@@ -1,69 +1,123 @@
 /*
  * Global variables
  */
-var gulp = require( 'gulp' ),
-	bulkSass = require( 'gulp-sass-bulk-import' ),
-	scss = require( 'gulp-sass' ),
-	browserSync = require( 'browser-sync' ),//ブラウザシンク
-	plumber = require( 'gulp-plumber' ),//エラー通知
-	notify = require( 'gulp-notify' ),//エラー通知
-	imagemin = require( 'gulp-imagemin' ),//画像圧縮
-	imageminPngquant = require( 'imagemin-pngquant' ),//png画像の圧縮
-	pleeease = require( 'gulp-pleeease' ),//ベンダープレフィックス
-	source = require( 'vinyl-source-stream' ),
-	buffer = require( 'vinyl-buffer' ),
-	browserify = require( 'browserify' ),
-	babelify = require ( 'babelify' ),
-	browserifyShim = require( 'browserify-shim' ),
-	watchify = require( 'watchify' ),
-	useref = require( 'gulp-useref' ),//ファイル結合
-	gulpif = require( 'gulp-if' ),// if文
-	uglify = require( 'gulp-uglify' ),//js圧縮
-	rename = require( 'gulp-rename' ),
-	minifyCss = require( 'gulp-cssnano' ),//css圧縮
-	del = require( 'del' ),//ディレクトリ削除
-	fs = require( "fs" ),
-	data = require( 'gulp-data' ), //json-data
-	sourcemaps = require( 'gulp-sourcemaps' ),
-	debug = require( 'gulp-debug' ),
-	util = require( 'gulp-util' ),
-	path = require('path'), //path
-	paths = {
-		rootDir : '/',
-		dstrootDir : 'htdocs',
-		srcDir : '/images',
-		dstDir : 'htdocs/images',
-		serverDir : 'localhost'
+const gulp           = require( 'gulp' ),
+	postcss          = require( 'gulp-postcss' ),
+	autoprefixer     = require( 'autoprefixer' ),
+	stylelint        = require( 'stylelint' ),
+	bulkSass         = require( 'gulp-sass-bulk-import' ),
+	sass             = require( 'gulp-sass' )( require( 'sass' ) ),
+	sassGlob         = require( 'gulp-sass-glob-use-forward' ),
+	browserSync      = require( 'browser-sync' ),//ブラウザシンク
+	plumber          = require( 'gulp-plumber' ),//エラー通知
+	notify           = require( 'gulp-notify' ),//エラー通知
+	pleeease         = require( 'gulp-pleeease' ),//ベンダープレフィックス
+	vinyl_source     = require( 'vinyl-source-stream' ),
+	buffer           = require( 'vinyl-buffer' ),
+	browserify       = require( 'browserify' ),
+	babelify         = require( 'babelify' ),
+	browserifyShim   = require( 'browserify-shim' ),
+	watchify         = require( 'watchify' ),
+	useref           = require( 'gulp-useref' ),//ファイル結合
+	gulpif           = require( 'gulp-if' ),// if文
+	uglify           = require( 'gulp-uglify' ),//js圧縮
+	rename           = require( 'gulp-rename' ),
+	minifyCss        = require( 'gulp-cssnano' ),//css圧縮
+	del              = require( 'del' ),//ディレクトリ削除
+	fs               = require( "graceful-fs" ),
+	data             = require( 'gulp-data' ), //json-data
+	sourcemaps       = require( 'gulp-sourcemaps' ),
+	debug            = require( 'gulp-debug' ),
+	util             = require( 'gulp-util' ),
+	path             = require( 'path' ), //path
+	minimist         = require( 'minimist' ),
+	cached           = require( 'gulp-cached' ),
+	fractal          = require( '@frctl/fractal' ).create();
+
+	const paths = {
+		rootDir   : '/',
+		dstrootDir: 'htdocs',
+		srcDir    : '/images',
+		dstDir    : 'htdocs/images',
+		serverDir : 'localhost',
+		styleguide: 'css/guid'
 	};
+
+	const options = minimist( process.argv.slice( 2 ), {
+		string: 'path',
+		default: {
+			path: 'yatblog.wp' // 引数の初期値
+		}
+	});
+
+	fractal.set( 'project.title', 'abiko' );
+	fractal.components.set( 'path', './src/styleguide/components/' );
+	fractal.docs.set('path', './src/styleguide/docs' );
+	fractal.web.set( 'static.path', './css' );
+	fractal.web.set( 'builder.dest', './styleguide' );
+	const logger = fractal.cli.console;
 /*
  * Sass
  */
-gulp.task( 'scss', function( done ) {
+gulp.task( 'sass', function( done ) {
 	gulp.src( './scss/**/*.scss' )
-		.pipe( plumber ( {
-			errorHandler: notify.onError( 'Error: <%= error.message %>' )
-		} ) )
+		.pipe( sassGlob() )
+		.pipe( sass.sync().on( 'error', sass.logError ) )
+		.pipe( cached( 'scss' ) )
 		.pipe( sourcemaps.init() )
-		.pipe( bulkSass() )
-		.pipe( rename( {
-			sass: true,
+		.pipe( sass( {
+			outputStyle: 'expanded',
 			minifier: true //圧縮の有無 true/false
 		} ) )
-		.pipe( scss( {
-			// outputStyle: 'expanded'
-			outputStyle: 'compressed'
+		.pipe( postcss( [
+			autoprefixer( {
+				grid: true,
+				cascade: false
+			} )
+		] ) )
+		.pipe( rename( {
+			sass: true
 		} ) )
 		.pipe( sourcemaps.write( './' ) )
-		.pipe( gulp.dest( './css/' ) );
+		.pipe( gulp.dest( './css' ) );
 	done();
 });
+
+
+/*
+ * Style Guide
+ */
+gulp.task( 'styleguide', function() {
+	const builder = fractal.web.builder();
+	// 出力中のconsole表示設定
+	builder.on( 'progress', function( completed, total ) {
+	logger.update( `${total} 件中 ${completed} 件目を出力中...`, 'info' );
+} );
+
+// 出力失敗時のconsole表示設定
+	builder.on( 'error', function() {
+		logger.error( err.message );
+	});
+
+	// 出力処理を実行
+	return builder.build().then( function() {
+		logger.success( 'スタイルガイドの出力処理が完了しました。' );
+	});
+});
+
 
 /*
  * JavaScript
  */
 
+function handleErrors( error ) {
+	notify.onError( { title: "Error", message: "Check your terminal", sound: "Funk" } )( error ); //Error Notification
+	console.log( error.toString() ); //Prints Error to Console
+	this.emit( "end" ); //End function
+};
+
 gulp.task( 'browserify', function ( done ) {
-	var option = {
+	const option = {
 		bundleOption: {
 			cache: {}, packageCache: {}, fullPaths: false,
 			debug: true,
@@ -73,73 +127,45 @@ gulp.task( 'browserify', function ( done ) {
 		dest: './js',
 		filename: 'bundle.js'
 	};
-	var b = browserify ( option.bundleOption )
-		.transform( babelify.configure ( {
-			compact: true,
-			presets: ["es2015"]
-		} ) )
-		.transform( browserifyShim );
-	bundle = function () {
-		b.bundle()
-			.pipe( plumber ( {
-				errorHandler: notify.onError( 'Error: <%= error.message %>' )
-			} ) )
-			.pipe( source ( option.filename ) )
-			.pipe( gulp.dest ( option.dest ) );
-	};
-	if ( global.isWatching ) {
-		var bundler = watchify( b );
-		bundler.on( 'update', bundle );
-	}
-	done();
-	return bundle();
-});
+	return browserify('./src/scripts/main.js')
+		.transform( browserifyShim )
+		.bundle( function() { option.bundleOption } )
+		.on( 'error', handleErrors )
+		.pipe( vinyl_source ( option.filename ) )
+		.pipe( gulp.dest( option.dest ) );
+	// done();
+} );
+
 
 /*
  * Pleeease
  */
-gulp.task( 'pleeease', function( done ) {
-	return gulp.src( './css/common.css' )
+gulp.task( 'pleeease', function() {
+	return gulp.src( './main.css' )
 		.pipe( pleeease( {
 			sass: true,
 			minifier: true //圧縮の有無 true/false
 		} ) )
+		.pipe( postcss ( [
+			autoprefixer( {
+				cascade: false,
+				grid: "autoplace"
+			} )
+		] ) )
 		.pipe( plumber ( {
 			errorHandler: notify.onError( 'Error: <%= error.message %>' )
 		} ) )
-		.pipe( gulp.dest( './css/' ) );
-	done();
-});
-
-/*
- * Imagemin
- */
-gulp.task( 'imagemin', function( done ) {
-	var srcGlob = paths.srcDir + '/**/*.+( jpg|jpeg|png|gif|svg|ico )';
-	var dstGlob = paths.dstDir;
-	var imageminOptions = {
-		optimizationLevel: 7,
-		use: imageminPngquant( { quality: '65-80', speed: 1 } )
-	};
-
-	gulp.src( srcGlob )
-		.pipe( plumber ( {
-			errorHandler: notify.onError( 'Error: <%= error.message %>' )
-		} ) )
-		.pipe( imagemin( imageminOptions ) )
-		.pipe( gulp.dest( paths.dstDir ) );
-	done();
+		.pipe( gulp.dest( './' ) );
 });
 
 /*
  * Useref
  */
 gulp.task( 'html', function ( done ) {
-	return gulp.src( './**/*.+( html|php|js )' )
+	return gulp.src( './**/*.+( html|php )' )
 		.pipe( useref( { searchPath: [ '.', 'dev' ] } ) )
-		.pipe( gulpif( '*.js', uglify().minify() ) )
-		// .pipe( gulpif( '*.css', minifyCss() ) )
-		.pipe( gulpif( '*.css', cleanCSS() ) )
+		.pipe( gulpif( '*.js', uglify() ) )
+		.pipe( gulpif( '*.css', minifyCss() ) )
 		.pipe( gulp.dest( paths.dstrootDir ) );
 	done();
 });
@@ -157,7 +183,7 @@ gulp.task( 'browser-sync', function( done ) {
 		// 	}
 		// },
 		proxy: {
-			target: "yatblog.wp"
+			target: options.path
 		},
 		notify: true
 	});
@@ -178,19 +204,22 @@ gulp.task( 'setWatch', function ( done ) {
  * Default
  */
 gulp.task( 'default', gulp.series( 'browser-sync', function() {
-	var bsList = [
+	const bsList = [
 		'./**/*.html',
 		'./**/*.php',
 		'./js/**/*.js',
-		'./style.css',
+		'./main.css',
+		'./**/*.scss',
+		'./**/*._scss',
 		'./**/*.png',
 		'./**/*.jpg',
 		'./**/*.svg'
 	];
-	gulp.watch( './scss/**/*.scss', gulp.task( 'scss' ) );
+	gulp.watch( './scss/**/*.scss', gulp.task( 'sass' ) );
 	gulp.watch( './src/scripts/**/*.js', gulp.task( 'browserify' ) );
 	gulp.watch( bsList, gulp.task( 'bs-reload') );
 }));
+
 
 /*
  * Build
@@ -208,7 +237,6 @@ gulp.task( 'devcopy', function ( done ) {
 		'!./package.json',
 		'!./package-lock.json',
 		'!./node_modules/**/*.*'
-
 	], {
 		dot: true
 	}).pipe( gulp.dest( paths.dstrootDir ) );
@@ -217,6 +245,6 @@ gulp.task( 'devcopy', function ( done ) {
 
 gulp.task( 'build',
 	gulp.series( 'clean',
-		gulp.parallel( 'html', 'imagemin', 'devcopy' )
+		gulp.parallel( 'html', 'devcopy' )
 	)
 );

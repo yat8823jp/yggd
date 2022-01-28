@@ -1,3 +1,6 @@
+@use "../define/variable";
+@use "../define/mixins";
+
 .mod-related {
     list-style-type: none;
     margin-left: -10px;
@@ -31,11 +34,11 @@
             }
         }//dl
     }//.mod-related-item
-    @media #{ $pcBreak }{
-    }//@media #{ $pcBreak }
-    @media #{ $tbBreak }{
-    }//@media #{ $pcBreak }
-    @media #{ $smBreak }{
+    @media #{ variable.$pcBreak }{
+    }//@media #{ variable.$pcBreak }
+    @media #{ variable.$tbBreak }{
+    }//@media #{ variable.$pcBreak }
+    @media #{ variable.$smBreak }{
         .mod-related-item {
             width: auto;
             dl {

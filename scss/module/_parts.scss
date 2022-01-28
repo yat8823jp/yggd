@@ -1,13 +1,16 @@
+@use "../define/variable";
+@use "../define/mixins";
+
 .mod-container {
-	width: $pcContentWid;
+	width: variable.$pcContentWid;
 	margin: auto;
-	@media #{ $pcBreak }{
-		width: $pcContentWid;
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak }{
-		width: $tbContentWid;
-	}//@media #{ $pcBreak }
-	@media #{ $smBreak }{
-		width: $smContentWid;
-	}//@media #{ $pcBreak }
+	@media #{ variable.$pcBreak }{
+		width: variable.$pcContentWid;
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak }{
+		width: variable.$tbContentWid;
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$smBreak }{
+		width: variable.$smContentWid;
+	}//@media #{ variable.$pcBreak }
 }

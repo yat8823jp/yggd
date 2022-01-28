@@ -1,7 +1,10 @@
+@use "../define/variable";
+@use "../define/mixins";
+
 .lout-main-navi {
 	ul {
-		font-family: $hwebfont;
-		color: $hcolor;
+		font-family: variable.$hwebfont;
+		color: variable.$hcolor;
 		li {
 			display: inline;
 			font-size: 2.0rem;
@@ -18,24 +21,24 @@
 			}
 			a {
 				margin: auto;
-				color: $hcolor;
+				color: variable.$hcolor;
 				text-decoration: none;
 				&:hover { color: #a9a9a9; }
 			}
 		}
 	}
-	@media #{ $pcBreak }{
+	@media #{ variable.$pcBreak }{
 		margin: auto;
-	}//@media #{ $pcBreak }
-	@media #{ $tbBreak }{
-	}//@media #{ $pcBreak }
-	@media #{ $smBreak }{
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$tbBreak }{
+	}//@media #{ variable.$pcBreak }
+	@media #{ variable.$smBreak }{
 		ul {
 			li {
 				line-height: 1.6;
 			}
 		}
-	}//@media #{ $pcBreak }
+	}//@media #{ variable.$pcBreak }
 }//.mod-main-navi
 
 .lout-pagination {
@@ -48,16 +51,16 @@
 	text-align: left;
 	.wp-pagenavi {
 		margin: 0 0 0 20px;
-		@media #{ $pcBreak }{
-		}//@media #{ $pcBreak }
-		@media #{ $tbBreak }{
+		@media #{ variable.$pcBreak }{
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$tbBreak }{
 			width: 100%;
 			margin: 0 auto 10px;
 			text-align: center;
 			display: block;
-		}//@media #{ $pcBreak }
-		@media #{ $smBreak }{
-		}//@media #{ $pcBreak }
+		}//@media #{ variable.$pcBreak }
+		@media #{ variable.$smBreak }{
+		}//@media #{ variable.$pcBreak }
 		span {
 			padding: 7px;
 			border: none;
@@ -73,28 +76,28 @@
 				transform: scale(1.2,1.2);
 				border: 1px solid #ad9e65;
 			}
-			@media #{ $pcBreak }{
-			}//@media #{ $pcBreak }
-			@media #{ $tbBreak }{
+			@media #{ variable.$pcBreak }{
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$tbBreak }{
 				margin: 2px 20px 20px auto;
-			}//@media #{ $pcBreak }
-			@media #{ $smBreak }{
-			}//@media #{ $pcBreak
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$smBreak }{
+			}//@media #{ variable.$pcBreak
 		}
 
 		.pages {
 			margin-right: 50px;
 			border: none;
-			@media #{ $pcBreak }{
-			}//@media #{ $pcBreak }
-			@media #{ $tbBreak }{
+			@media #{ variable.$pcBreak }{
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$tbBreak }{
 				width: 100%;
 				margin: 0 auto 10px;
 				text-align: center;
 				display: block;
-			}//@media #{ $pcBreak }
-			@media #{ $smBreak }{
-			}//@media #{ $pcBreak }
+			}//@media #{ variable.$pcBreak }
+			@media #{ variable.$smBreak }{
+			}//@media #{ variable.$pcBreak }
 
 		}
 		.current {
