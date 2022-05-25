@@ -197,9 +197,6 @@
 		@media #{ variable.$tbBreak }{
 		}//@media #{ variable.$pcBreak }
 		@media #{ variable.$smBreak }{
-			// width: (197/2)+px;
-			// padding: 20px 0 0 50px;
-			// background-size: contain;
 			display: none;
 		}//@media #{ variable.$pcBreak }
 	}//h2

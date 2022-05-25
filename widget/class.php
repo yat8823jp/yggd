@@ -86,4 +86,9 @@ class EyecatchWidgetItem extends WP_Widget {
 		<?php
 	}
 }
-add_action( 'widgets_init', create_function( '', 'return register_widget( "EyecatchWidgetItem" );' ) );
+
+add_action(
+	'widgets_init', function() {
+		return register_widget( "EyecatchWidgetItem" );
+	}
+);
