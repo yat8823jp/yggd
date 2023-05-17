@@ -5,8 +5,8 @@ $hash_title = '';
 $hash_word = '';
 
 if( ! is_home() || ! is_404() ) {
-	$title = preg_replace( "/(['#'].*)/", '', esc_html( get_the_title() ) );
-	preg_match_all( "/(['#'].*)/", esc_html( get_the_title() ), $hash_title );
+	$title = preg_replace( "/(['#'].*)/", '', get_the_title() );
+	preg_match_all( "/(['#'].*)/", get_the_title(), $hash_title );
 	if ( $hash_title[0] ) {
 		$hashs = explode( " ", $hash_title[0][0] );
 		foreach( $hashs as $hash ) {
@@ -27,16 +27,16 @@ if ( is_plugin_active( 'sns-count-cache/sns-count-cache.php' ) ) {
 				'img' => COMMON_PFIX . '/img/share/hateb_bt.png',
 				'alt' => 'このエントリーをはてなブックマークに追加',
 				'class' => 'metasns-hateb',
-				'share' => scc_get_share_hatebu( array( 'post_id' => 'home' ) )
+				'share' => shareNumber( $args, 'hateb' )
 			),
 		'twitter' =>
 			array (
 				'a_link_before_home' => '<a href="//twitter.com/share/?text=' . get_bloginfo( 'name' ) . '&amp;url=' . home_url( '/' ) . '" onClick="window.open(encodeURI(decodeURI(this.href)), \'tweetwindow\', \'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1\'); return false;" rel="nofollow">',
-				'a_link_before_contents' => '<a href="//twitter.com/share/?text=' . $title , '｜' .  get_bloginfo( 'name' ) . '&amp;url=' .  get_the_permalink() . '&amp;hashtags=' .  $hash_word . '"  onClick="window.open(encodeURI(decodeURI(this.href)), \'tweetwindow\', \'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1\'); return false;" rel="nofollow">',
+				'a_link_before_contents' => '<a href="//twitter.com/share/?text=' . $title . '｜' .  get_bloginfo( 'name' ) . '&amp;url=' .  get_the_permalink() . '&amp;hashtags=' .  $hash_word . '"  onClick="window.open(encodeURI(decodeURI(this.href)), \'tweetwindow\', \'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1\'); return false;" rel="nofollow">',
 				'img' => COMMON_PFIX . '/img/share/twitter_bt.png',
 				'alt' => 'tiwtter でつぶやく',
 				'class' => 'metasns-hateb',
-				'share' => scc_get_share_hatebu( array( 'post_id' => 'home' ) )
+				'share' => shareNumber( $args, 'twitter' )
 			),
 		'facebook' =>
 			array (
@@ -45,7 +45,7 @@ if ( is_plugin_active( 'sns-count-cache/sns-count-cache.php' ) ) {
 				'img' => COMMON_PFIX . '/img/share/facebook_bt.png',
 				'alt' => 'シェアする',
 				'class' => 'metasns-fb',
-				'share' => scc_get_share_facebook( array( 'post_id' => 'home' ) )
+				'share' => shareNumber( $args, 'facebook' )
 			),
 		'pocket' =>
 			array (
@@ -54,7 +54,7 @@ if ( is_plugin_active( 'sns-count-cache/sns-count-cache.php' ) ) {
 				'img' => COMMON_PFIX . '/img/share/pocket_bt.png',
 				'alt' => 'シェアする',
 				'class' => 'metasns-pocket',
-				'share' => scc_get_share_pocket( array( 'post_id' => 'home' ) )
+				'share' => shareNumber( $args, 'pocket' )
 			),
 	);
 } else {
@@ -102,7 +102,7 @@ if ( is_plugin_active( 'sns-count-cache/sns-count-cache.php' ) ) {
 	<?php foreach( $sns as $key => $name ) : ?>
 		<li class="<?php echo $key; ?> metasns-item">
 			<?php
-			if ( ! is_home() ) {
+			if ( $args != 'home'  ) {
 				echo $name['a_link_before_contents'];
 			} else {
 				echo $name['a_link_before_home'];
@@ -112,7 +112,7 @@ if ( is_plugin_active( 'sns-count-cache/sns-count-cache.php' ) ) {
 					<dt><img src="<?php echo esc_html( $name['img'] ); ?>" alt="<?php echo esc_html( $name['alt'] ); ?>" class="<?php echo esc_html( $name['class'] ); ?>"></dt>
 					<dd>
 						<?php
-							if ( is_plugin_active( 'sns-count-cache/index.php' ) ) {
+							if ( is_plugin_active( 'sns-count-cache/sns-count-cache.php' ) ) {
 								echo $name['share'];
 							}
 						?>

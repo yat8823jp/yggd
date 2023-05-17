@@ -255,3 +255,37 @@
 		$content =  mb_substr( $content, 0, $length );//文字列を指定した長さで切り取る
 		return $content;
 	}
+
+	function shareNumber ( $args, $name ) {
+		switch( $name ) {
+			case 'hateb' :
+				if ( $args == 'home' ) {
+					$share_num = scc_get_share_hatebu( array( 'post_id' => 'home' ) );
+				} else {
+					$share_num = scc_get_share_hatebu();
+				}
+				break;
+			case 'twitter' :
+				if ( $args == 'home' ) {
+					$share_num = scc_get_share_twitter( array( 'post_id' => 'home' ) );
+				} else {
+					$share_num = scc_get_share_twitter();
+				}
+				break;
+			case 'facebook' :
+				if ( $args == 'home' ) {
+					$share_num = scc_get_share_facebook( array( 'post_id' => 'home' ) );
+				} else {
+					$share_num = scc_get_share_facebook();
+				}
+				break;
+			case 'pocket' :
+				if ( $args == 'home' ) {
+					$share_num = scc_get_share_pocket( array( 'post_id' => 'home' ) );
+				} else {
+					$share_num = scc_get_share_pocket();
+				}
+				break;
+		}
+		return $share_num;
+	}
