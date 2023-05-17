@@ -1,3 +1,5 @@
+<?php include_once( ABSPATH . 'wp-admin/includes/plugin.php'); ?>
+
 <section class="lout-main-contents-postdata">
 
 <?php
@@ -38,7 +40,7 @@
 			</div>
 		</section>
 		<?php
-		related_posts();
+		if ( is_plugin_active( 'yet-another-related-posts-plugin/yarpp.php' ) ) related_posts();
 		if( comments_open() ) {
 			echo '<div class="deco"><img src="' . COMMON_PFIX . '/img/flower.png" alt=""></div>';
 			comments_template();

@@ -1,6 +1,7 @@
 <?php
 
-	if ( ! isset( $content_width ) ) { $content_width = 1120; }
+	if ( ! isset( $content_width ) ) $content_width = 1120;
+
 	define( 'COMMON_PFIX', get_template_directory_uri() );
 
 	add_theme_support( 'title-tag' );//タイトルタグ有効
@@ -37,22 +38,16 @@
 		wp_enqueue_script( 'heightLine' , get_template_directory_uri() . '/js/heightLine/jquery.heightLine.js', false, true );
 		wp_enqueue_script( 'webfont', '//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js', array(), null, true );
 		wp_enqueue_script( 'yggdrasillfont', get_template_directory_uri() . '/js/yggdrasillfont.js', array( 'webfont' ), null, true );
-		// wp_dequeue_style(  'jetpack_css' );
 		wp_dequeue_style(  'yarppWidgetCss' );
 		wp_dequeue_style(  'wp-block-library' );
 		wp_dequeue_style(  'wp-pagenavi' );
-		// wp_dequeue_script( 'crayon_js' );
 		wp_dequeue_script( 'devicepx' );
 		wp_dequeue_script( 'heightLine' );
 		wp_dequeue_script( 'milestone' );
+
 		if( ! ( is_front_page() || is_page() ) ) {
 			wp_enqueue_script( 'fontplus' , '//webfont.fontplus.jp/accessor/script/fontplus.js?b1QRw-8tAx4%3D&box=UDQBWShX47k%3D&aa=1&ab=2', false, true );
 			wp_enqueue_script( 'adobefont', get_template_directory_uri() . '/js/adobefont.js', false, true );
-		}
-		if( is_front_page() || is_page() ) {
-			// wp_dequeue_style(  'crayon' );
-			// wp_dequeue_style(  'crayon-theme-classic' );
-			// wp_dequeue_style(  'crayon-font-monaco' );
 		}
 	}
 	add_action( 'wp_enqueue_scripts', 'yggdrasill_read_order_styles_scripts' );
@@ -75,9 +70,6 @@
 		wp_style_add_data( 'wp-pagenavi', 'alt', 'preload' );
 		wp_enqueue_script( 'devicepx' );
 		wp_enqueue_script( 'heightLine' );
-		// wp_enqueue_script( 'milestone' );
-		// wp_enqueue_script( 'jquery' );
-		// wp_enqueue_script( 'jquery-easing' );
 	}
 	add_action( 'wp_footer', 'yggdrasill_footer_read_styles' );
 	function add_alt_change_preload ( $tag ) {
