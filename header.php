@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" prefix="og: //ogp.me/ns# fb: //www.facebook.com/2008/fbml">
+<html lang="<?php language_attributes(); ?>" prefix="og: //ogp.me/ns# fb: //www.facebook.com/2008/fbml">
 <head prefix="og: //ogp.me/ns# fb: //ogp.me/ns/fb# article: //ogp.me/ns/article#">
 <meta charset="UTF-8">
 <meta name="description" content="<?php bloginfo( 'description' ); ?>">
@@ -27,11 +27,6 @@
 				</ul>
 			</nav>
 			<h1 class="mod-sitelogo"><a href="/"><img src="<?php echo COMMON_PFIX; ?>/img/common/head_logo.png" alt="YATのBlog"></a></h1>
-			<!-- <form class="mod-site-search" action="<?php bloginfo('url'); ?>">
-				<label for="mod-site-search-inputarea">Search</label>
-				<input type="text" name="s" id="mod-site-search-inputarea" class="mod-site-search-inputarea" placeholder="サイト内検索">
-				<input id="mod-site-search-inputbt" type="submit" value="送 信" class="mod-site-search-inputbt">
-			</form> -->
 			<?php get_search_form(); ?>
 		</div><!--/.mod-container-->
 		<p class="mod-headside-text"><img src="<?php echo COMMON_PFIX; ?>/img/common/head_side_text.png" alt="Web制作を行う全ての方へ"></p>

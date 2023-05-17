@@ -1,6 +1,8 @@
 <?php
 global $page, $paged;
 $obj = get_queried_object();
+$canonical_url = '';
+$description = '';
 
 // var_dump( $obj );
 //title
@@ -34,8 +36,10 @@ $obj = get_queried_object();
 	if ( $paged >= 2 || $page >= 2 ) {
 		$description="";
 	}
-	$description = str_replace( "<p>", "", $description );
-	$description = str_replace( "</p>", "", $description );
+	if( isset( $description ) ) {
+		$description = str_replace( "<p>", "", $description );
+		$description = str_replace( "</p>", "", $description );
+	}
 //url
 	if ( is_home() ) {
 		$canonical_url = home_url() . "/";
@@ -48,7 +52,14 @@ $obj = get_queried_object();
 		$canonical_url = $canonical_url . 'page/' . max( $paged, $page ) . '/';
 	}
 //image
-	$str = $post -> post_content;
+	if( ! isset( $post ) ) {
+		$post = '';
+		$str = '';
+	} else {
+		if ( $post -> post_content != '' ) {
+			$str = $post -> post_content;
+		}
+	}
 	$searchPattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';//投稿にイメージがあるか調べる
 	if ( has_post_thumbnail() && ! is_archive() && ! is_front_page() && ! is_home() ){//投稿にサムネイルがある場合の処理
 		$image_id = get_post_thumbnail_id( $post -> ID );

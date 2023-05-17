@@ -7,7 +7,7 @@
 	} elseif( is_search() ){
 		echo '検索キーワード： ' . get_search_query();
 	} elseif( is_home() ){
-		get_template_part( 'parts/share', 'top' );
+		get_template_part( 'parts/share', 'data', 'home' );
 	}
 ?>
 </div><!--mod-content-share-->
