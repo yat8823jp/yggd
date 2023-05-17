@@ -2,7 +2,7 @@
 	<div class="lout-main">
 
 		<?php if ( is_active_sidebar( 'tagcloud' ) ) { ?>
-			<?php dynamic_sidebar('tagcloud'); ?>
+			<?php //dynamic_sidebar('tagcloud'); ?>
 		<?php }//is_active_sidebar( 'sidebar_ad' ) ?>
 
 		<section class="lout-footer-auth">

@@ -4,10 +4,8 @@
 	define( 'COMMON_PFIX', get_template_directory_uri() );
 
 	add_theme_support( 'title-tag' );//タイトルタグ有効
-	// add_theme_support( 'automatic-feed-links' );//feed有効
 	add_theme_support( 'post-thumbnails' );//アイキャッチ有効
-	remove_action('wp_head', 'feed_links_extra', 3);
-	// add_theme_support( 'responsive-embeds' );
+	remove_action( 'wp_head', 'feed_links_extra', 3 );
 
 	function yggdrasill_theme_add_editor_styles() {
 		add_editor_style( get_template_directory_uri() . "/css/editor-style.css" );
@@ -98,40 +96,6 @@
 		add_filter( 'script_loader_tag', 'add_defer_to_scripts', 10 ,2 );
 	}
 
-// ---------------------------------------------------------------------------
-// WordpressのJavascriptやCSSのハンドル名をHTMLソースに表示する
-// ---------------------------------------------------------------------------
-// function my_get_dependency( $dependency ) {
-//     $dep = "";
-//     if ( is_a( $dependency, "_WP_Dependency" ) ) {
-//         $dep .= "$dependency->handle";
-//         $dep .= " [" . implode( " ", $dependency->deps ) . "]";
-//         $dep .= " '$dependency->src'";
-//         $dep .= " '$dependency->ver'";
-//         $dep .= " '$dependency->args'";
-//         $dep .= " (" . implode( " ", $dependency->extra ) . ")";
-//     }
-//     return "$dep\n";
-// }
-// function my_style_queues() {
-//     global $wp_styles;
-//     echo "<!-- WP_Dependencies for styles\n";
-//     foreach ( $wp_styles->queue as $val ) {
-//         echo my_get_dependency( $wp_styles->registered[ $val ] );
-//     }
-//     echo "-->\n";
-// }
-// add_action( 'wp_print_styles', 'my_style_queues', 9999 );
-// function my_script_queues() {
-//     global $wp_scripts;
-//     echo "<!-- WP_Dependencies for scripts\n";
-//     foreach ( $wp_scripts->queue as $val ) {
-//         echo my_get_dependency( $wp_scripts->registered[ $val ] );
-//     }
-//     echo "-->\n";
-// }
-// add_action( 'wp_print_scripts', 'my_script_queues', 9999 );
-
 	//アイキャッチのサイズ削除
 	add_filter( 'post_thumbnail_html', 'custom_attribute' );
 	function custom_attribute( $html ){
@@ -151,7 +115,7 @@
 	}
 
 	//ウィジェット追加
-	include 'widget/class.php';
+	// include 'widget/class.php';
 	add_action( 'widgets_init', 'theme_slug_widgets_init' );
 	function theme_slug_widgets_init() {
 		//広告用
