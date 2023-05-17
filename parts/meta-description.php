@@ -12,7 +12,7 @@ $description = '';
 		$title = wp_title( '', false, 'right' ) . '｜' . home_url( 'name' );
 	}
 	if ( $paged >= 2 || $page >= 2 ) {
-		if( is_home ) {
+		if( is_home() ) {
 			$title = $title . '-記事一覧-' . max( $paged, $page ) . 'ページ目 ｜ ';
 		} else {
 			$title = str_replace( '｜', '-' . max( $paged, $page ) . 'ページ目 ｜ ', $title );
