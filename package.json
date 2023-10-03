@@ -69,7 +69,7 @@
     "npm": "^9.6.6",
     "npm-check-updates": "^16.10.12",
     "path": "^0.12.7",
-    "postcss": "^8.4.23",
+    "postcss": "^8.4.31",
     "postcss-loader": "^7.3.0",
     "ress": "^5.0.2",
     "sanitize.css": "^13.0.0",
