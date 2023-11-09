@@ -2232,6 +2232,7 @@ img {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 1.6rem;
+  text-align: center;
 }
 
 .fontbox {
@@ -2358,10 +2359,6 @@ table td {
 }
 .twitter-tweet {
   margin: auto;
-}
-
-.wp-block-image figcaption {
-  text-align: center;
 }
 
 .mod-main-content-sub {
@@ -3182,6 +3179,7 @@ table td {
 }
 .mod-adsense-relation__inner {
   margin-left: 0;
+  overflow-y: hidden;
   overflow-x: auto;
 }
 

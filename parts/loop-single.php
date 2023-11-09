@@ -32,7 +32,7 @@
 		?>
 		<div class="yarpp-related">
 		<section class="lout-related mod-main-content-sub mod-adsense-relation">
-			<h2 class="mod-main-content-sub-h">Related</h2>
+			<h2 class="mod-main-content-sub-h">PR</h2>
 			<div class="mod-related mod-adsense-relation__inner">
 				<?php
 					get_template_part( 'parts/adsense', 'relation' );
