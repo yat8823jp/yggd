@@ -12,8 +12,6 @@
 		transition: variable.$transNormal;
 	}//@media #{ variable.$pcBreak }
 	@media #{ variable.$smBreak }{
-		// width: 300px;
-		// margin-left: 50px !important;
 		transition: variable.$transNormal;
 	}//@media #{ variable.$pcBreak
 	&-item {
@@ -28,6 +26,8 @@
 			box-sizing: border-box;
 		}
 		&-set {
+			max-width: inherit;
+			margin: auto;
 			vertical-align: middle;
 			line-height: 1.3;
 			dt {
@@ -45,37 +45,27 @@
 				word-wrap: normal;
 			}
 		}//&-set
+		&-noset {
+
+		}
 	}//&-item
 	&-hateb {
 		width: 15px;
 		height: 15px;
-		@media #{ variable.$smBreak }{
-		}
 	}
 	&-tw {
 		width: 18px;
 		height: 14px;
-		@media #{ variable.$smBreak }{
-		}
 	}
 	&-fb {
 		width: 14px;
 		height: 14px;
-		@media #{ variable.$smBreak }{
-		}
 	}
 	&-pocket {
 		width: 14px;
 		height: 14px;
-		@media #{ variable.$smBreak }{
-		}
 	}
-	// li {
-	// 	margin: 0 3px 0 3px;
-	// 	padding: 5px 0;
-	// 	display: inline-block !important;
-	// 	overflow: hidden !important;
-	// }
+
 	iframe {
 		margin: 0 !important;
 		html {
@@ -99,6 +89,38 @@
 	}
 
 }//metasns
+
+.metasns--nocount {
+	.metasns-item {
+		a {
+			width: auto;
+			height: auto;
+			margin-top: 11px;
+			padding: 0;
+			background: none;
+			text-decoration: none;
+			display: inline-block;
+			box-sizing: border-box;
+		}
+	}
+	.metasns-hateb {
+		width: 32px;
+		height: 32px;
+	}
+	.metasns-x {
+		width: 30px;
+		height: 30px;
+	}
+	.metasns-fb {
+		width: 32px;
+		height: 32px;
+	}
+	.metasns-pocket {
+		width: 32px;
+		height: 32px;
+	}
+}
+
 .mod-content-share {
 	@include mixins.dropshadow;
 	@include mixins.reset;
@@ -115,9 +137,12 @@
 		margin: auto;
 		// vertical-align: middle;
 		li {
-			// margin-right: 10px;
+			margin-right: 20px;
 			display: inline;
 			font-size: 1.4rem;
+			&:last-child {
+				margin-right: 0;
+			}
 		}
 	}
 
