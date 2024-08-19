@@ -1097,6 +1097,10 @@ body {
   top: 1px;
 }
 
+.lout-header__description {
+  font-size: 1.4rem;
+}
+
 .lout-footer {
   width: 100%;
   margin-top: 100px;

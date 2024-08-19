@@ -28,6 +28,7 @@
 			</nav>
 			<h1 class="mod-sitelogo"><a href="/"><img src="<?php echo COMMON_PFIX; ?>/img/common/head_logo.png" alt="YATのBlog"></a></h1>
 			<?php get_search_form(); ?>
+			<p class="lout-header__description">当ブログでは商品やサービスの紹介にアフィリエイト広告を掲載しています</p>
 		</div><!--/.mod-container-->
 		<p class="mod-headside-text"><img src="<?php echo COMMON_PFIX; ?>/img/common/head_side_text.png" alt="Web制作を行う全ての方へ"></p>
 	</div>
