@@ -21,7 +21,7 @@
 			<nav class="lout-main-navi">
 				<ul>
 					<li class="mod-main-navi-1"><a href="/?page_id=5">About</a></li>
-					<li class="mod-main-navi-2"><a href="//twitter.com/yat8823jp">Twitter</a></li>
+					<li class="mod-main-navi-2"><a href="//x.com/yat8823jp">X</a></li>
 					<li class="mod-main-navi-3"><a href="//www.facebook.com/yatblog/">Facebook</a></li>
 					<li class="mod-main-navi-4"><a href="<?php bloginfo('atom_url'); ?>">Rss</a></li>
 				</ul>
