@@ -1,6 +1,6 @@
 webFont.load( {
 	google: {
-		families: {
+		families: [
 			'Kosugi',
 			'Kosugi+Maru',
 			'M+PLUS+1p',
@@ -9,6 +9,6 @@ webFont.load( {
 			'Noto+Serif+JP',
 			'Sawarabi+Gothic',
 			'Sawarabi+Mincho'
-		}
+		]
 	}
 } );

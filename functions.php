@@ -24,8 +24,8 @@
 	}
 	function yggdrasill_regist_jquery() {
 		wp_deregister_script('jquery');
-		wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-3.4.1.slim.min.js', '', '3.4.1', true );
-		wp_enqueue_script( 'jquery-easing', get_template_directory_uri() . '/js/jquery-easing1.4.1.min.js', 'jquery', '1.4.1', true );
+		wp_enqueue_script( 'jQuery', '//code.jquery.com/jquery-3.7.1.slim.min.js', array(), '3.7.1', true );
+		// wp_enqueue_script( 'jquery-easing', get_template_directory_uri() . '/js/jquery-easing1.4.1.min.js', array( 'jQuery' ), '1.4.1', true );
 	}
 	add_action( 'wp_print_scripts', 'yggdrasill_regist_jquery' );
 
@@ -34,10 +34,9 @@
 		$theme_version = $theme->get( 'Version' );
 
 		yggdrasill_register_styles();
-		wp_enqueue_style(  'style'      , array(), $theme_version );
-		wp_enqueue_script( 'heightLine' , get_template_directory_uri() . '/js/heightLine/jquery.heightLine.js', false, true );
-		wp_enqueue_script( 'webfont', '//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js', array(), null, true );
-		wp_enqueue_script( 'yggdrasillfont', get_template_directory_uri() . '/js/yggdrasillfont.js', array( 'webfont' ), null, true );
+		wp_enqueue_script( 'heightLine' , get_template_directory_uri() . '/js/heightLine/jquery.heightLine.js', array( 'jQuery' ), true );
+		wp_enqueue_script( 'webfont', '//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js', array(), null, array( 'in_footer' => true ) );
+		wp_enqueue_script( 'yggdrasillfont', get_template_directory_uri() . '/js/yggdrasillfont.js', array( 'webfont' ), null, array( 'in_footer' => true ) );
 		wp_dequeue_style(  'yarppWidgetCss' );
 		wp_dequeue_style(  'wp-block-library' );
 		wp_dequeue_style(  'wp-pagenavi' );
@@ -46,8 +45,8 @@
 		wp_dequeue_script( 'milestone' );
 
 		if( ! ( is_front_page() || is_page() ) ) {
-			wp_enqueue_script( 'fontplus' , '//webfont.fontplus.jp/accessor/script/fontplus.js?b1QRw-8tAx4%3D&box=UDQBWShX47k%3D&aa=1&ab=2', false, true );
-			wp_enqueue_script( 'adobefont', get_template_directory_uri() . '/js/adobefont.js', false, true );
+			wp_enqueue_script( 'fontplus' , '//webfont.fontplus.jp/accessor/script/fontplus.js?b1QRw-8tAx4%3D&box=UDQBWShX47k%3D&aa=1&ab=2', array(), true );
+			wp_enqueue_script( 'adobefont', get_template_directory_uri() . '/js/adobefont.js', array(), true );
 		}
 	}
 	add_action( 'wp_enqueue_scripts', 'yggdrasill_read_order_styles_scripts' );
