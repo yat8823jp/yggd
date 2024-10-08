@@ -1,4 +1,4 @@
-webFont.load( {
+WebFont.load( {
 	google: {
 		families: [
 			'Kosugi',
