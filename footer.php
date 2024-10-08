@@ -1,8 +1,6 @@
 <footer class="lout-footer">
 	<div class="lout-main">
-
-		<?php if ( is_active_sidebar( 'tagcloud' ) ) dynamic_sidebar('tagcloud'); ?>
-
+		<?php if ( is_active_sidebar( 'tagcloud' ) ) dynamic_sidebar( 'tagcloud' ); ?>
 		<section class="lout-footer-auth">
 			<h2 class="lout-footer-auth-h">Author</h2>
 			<dl>
