@@ -278,13 +278,6 @@
 					$share_num = scc_get_share_facebook();
 				}
 				break;
-			case 'pocket' :
-				if ( $args == 'home' ) {
-					$share_num = scc_get_share_pocket( array( 'post_id' => 'home' ) );
-				} else {
-					$share_num = scc_get_share_pocket();
-				}
-				break;
 		}
 		return $share_num;
 	}

@@ -2022,11 +2022,6 @@ a:hover {
   height: 14px;
 }
 
-.metasns-pocket {
-  width: 14px;
-  height: 14px;
-}
-
 .metasns iframe {
   margin: 0 !important;
 }
@@ -2075,11 +2070,6 @@ a:hover {
 }
 
 .metasns--nocount .metasns-fb {
-  width: 32px;
-  height: 32px;
-}
-
-.metasns--nocount .metasns-pocket {
   width: 32px;
   height: 32px;
 }
@@ -3194,6 +3184,7 @@ table td {
   border: 1px solid #b1a567;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  aspect-ratio: 16/9;
 }
 
 .mod-related .mod-related-item dl dd {

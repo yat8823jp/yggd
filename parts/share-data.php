@@ -47,15 +47,6 @@ if ( is_plugin_active( 'sns-count-cache/sns-count-cache.php' ) ) {
 				'class' => 'metasns-fb',
 				'share' => shareNumber( $args, 'facebook' )
 			),
-		'pocket' =>
-			array (
-				'a_link_before_home' => '<a href="//www.getpocket.com/edit?u=' .  home_url( '/' ) . '" rel="nofollow">',
-				'a_link_before_contents' => '<a href="//www.getpocket.com/edit?u=' . get_the_permalink() . '" rel="nofollow">',
-				'img' => COMMON_PFIX . '/img/share/pocket_bt.png',
-				'alt' => 'シェアする',
-				'class' => 'metasns-pocket',
-				'share' => shareNumber( $args, 'pocket' )
-			),
 	);
 } else {
 	$sns = array (
@@ -84,15 +75,6 @@ if ( is_plugin_active( 'sns-count-cache/sns-count-cache.php' ) ) {
 				'img' => COMMON_PFIX . '/img/share/facebook_bt.png',
 				'alt' => 'シェアする',
 				'class' => 'metasns-fb',
-				'share' => ''
-			),
-		'pocket' =>
-			array (
-				'a_link_before_home' => '<a href="//www.getpocket.com/edit?u=' .  home_url( '/' ) . '" rel="nofollow">',
-				'a_link_before_contents' => '<a href="//www.getpocket.com/edit?u=' . get_the_permalink() . '" rel="nofollow">',
-				'img' => COMMON_PFIX . '/img/share/pocket_bt.png',
-				'alt' => 'シェアする',
-				'class' => 'metasns-pocket',
 				'share' => ''
 			),
 	);
